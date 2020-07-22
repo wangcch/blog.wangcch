@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>js on 那那那呀</title>
+    <link>https://blog.wangcch.cc/categories/js/</link>
+    <description>Recent content in js on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 24 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/categories/js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML5 History模式配置 (Node.js)</title>
+      <link>https://blog.wangcch.cc/posts/spa_history/</link>
+      <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/spa_history/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;vue-router 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nuxt element-ui</title>
+      <link>https://blog.wangcch.cc/posts/nuxt_element-ui/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/nuxt_element-ui/</guid>
+      <description>&lt;p&gt;Nuxt 引入js插件 以element-ui 为例&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx Node 服务器简单代理方案</title>
+      <link>https://blog.wangcch.cc/posts/nginx&#43;node_server_simple_proxy_program/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/nginx&#43;node_server_simple_proxy_program/</guid>
+      <description>简单使用Nginx反向代理Node服务 前言 一直处于todo状态的东西，但本人比较懒，一直没写，但却用了很久。应该是去年开始线上服务器从windows server转到CentOS。（windows ser</description>
+    </item>
+    
+    <item>
+      <title>vuex 简单案例</title>
+      <link>https://blog.wangcch.cc/posts/vuex_simple_case/</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vuex_simple_case/</guid>
+      <description>Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。 Vuex 是什么 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种</description>
+    </item>
+    
+    <item>
+      <title>axios 好东西</title>
+      <link>https://blog.wangcch.cc/posts/axios/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/axios/</guid>
+      <description>&lt;p&gt;一个用于浏览器和node.js的基于Promise的HTTP客户端。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>node 记一次爬虫</title>
+      <link>https://blog.wangcch.cc/posts/once_crawler_node/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/once_crawler_node/</guid>
+      <description>一直都知道“爬虫”这个名称，但真正手写没试过。主要还是本人懒，再说也没什么需求。但今天因为需要一个测试数据，对着网页badssl.com，手动敲json文件。真的很多，是在敲不下去，再怎么复制粘贴也受</description>
+    </item>
+    
+    <item>
+      <title>vue-cli API代理</title>
+      <link>https://blog.wangcch.cc/posts/vue-cli_api_proxy/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue-cli_api_proxy/</guid>
+      <description>使用proxyTable进行跨域API代理 // config/index.js module.exports = { dev: { proxyTable: { // 将所有以 /api 开头的请求通过 jsonplaceholder 代理 &amp;#39;/api&amp;#39;: { target: &amp;#39;https://wangcch.cc&amp;#39;, changeOrigin: true, pathRewrite: { &amp;#39;^/api&amp;#39;: &amp;#39;&amp;#39; } } } } } 调用 this.$http.get(&amp;#39;/api/demo&amp;#39;).then(function(res){ console.log(res.data); }) 依赖 npm install vue-resource</description>
+    </item>
+    
+    <item>
+      <title>Angular 参考手册</title>
+      <link>https://blog.wangcch.cc/posts/angular_reference_manual/</link>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/angular_reference_manual/</guid>
+      <description>Angular 指令 Angular 事件 Angular 全局API Angular指令 指令 描述 ng-app 定义应用程序的根元素。 ng-bind 绑定 HTML 元素到应用程序数据 ng-bind-html 绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML 字符串中危险字符 ng-bind-template 规定要使用模板替换的文本内容 ng-blur 规定 blur 事件的</description>
+    </item>
+    
+    <item>
+      <title>js 循环延时踩坑</title>
+      <link>https://blog.wangcch.cc/posts/js_settimeout_hole/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/js_settimeout_hole/</guid>
+      <description>为什么遇到循环延时操作了。一切源于在小程序开发过程中循环生成多个二维码事件，二维码画图太慢，在读取canvas画图地址时，不给一定盾延时是无法读取到图片地址的。再加上小程序不支持多线程。画图需要一定的</description>
+    </item>
+    
+    <item>
+      <title>Vue 常用UI组件</title>
+      <link>https://blog.wangcch.cc/posts/vue_ui/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue_ui/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Muse-UI&lt;/td&gt;
+&lt;td&gt;Mint UI&lt;/td&gt;
+&lt;td&gt;iview&lt;/td&gt;
+&lt;td&gt;vue-mui&lt;/td&gt;
+&lt;td&gt;radon-ui&lt;/td&gt;
+&lt;td&gt;antd vue&lt;/td&gt;
+&lt;td&gt;weex&lt;/td&gt;
+&lt;td&gt;element&lt;/td&gt;
+&lt;td&gt;N3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

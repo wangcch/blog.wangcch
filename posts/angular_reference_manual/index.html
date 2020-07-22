@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>Angular 参考手册 ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="Angular 指令 Angular 事件 Angular 全局API Angular指令 指令 描述 ng-app 定义应用程序的根元素。 ng-bind 绑定 HTML 元素到应用程序数据 ng-bind-html 绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML 字符串中危险字符 ng-bind-template 规定要使用模板替换的文本内容 ng-blur 规定 blur 事件的" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/angular_reference_manual/'>Angular 参考手册</a></h2>
+                        <span class="date">2018.02.02</span>
+                    </div>
+                    <div class="post_content markdown"><ol>
+<li><a href="#Angular%E6%8C%87%E4%BB%A4">Angular 指令</a></li>
+<li><a href="#Angular%E4%BA%8B%E4%BB%B6">Angular 事件</a></li>
+<li><a href="#Angular%E5%85%A8%E5%B1%80API">Angular 全局API</a></li>
+</ol>
+<!-- raw HTML omitted -->
+<h1 id="angular指令">Angular指令</h1>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ng-app</td>
+<td>定义应用程序的根元素。</td>
+</tr>
+<tr>
+<td>ng-bind</td>
+<td>绑定 HTML 元素到应用程序数据</td>
+</tr>
+<tr>
+<td>ng-bind-html</td>
+<td>绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML 字符串中危险字符</td>
+</tr>
+<tr>
+<td>ng-bind-template</td>
+<td>规定要使用模板替换的文本内容</td>
+</tr>
+<tr>
+<td>ng-blur</td>
+<td>规定 blur 事件的行为</td>
+</tr>
+<tr>
+<td>ng-change</td>
+<td>规定在内容改变时要执行的表达式</td>
+</tr>
+<tr>
+<td>ng-checked</td>
+<td>规定元素是否被选中</td>
+</tr>
+<tr>
+<td>ng-class</td>
+<td>指定 HTML 元素使用的 CSS 类</td>
+</tr>
+<tr>
+<td>ng-class-even</td>
+<td>类似 ng-class，但只在偶数行起作用</td>
+</tr>
+<tr>
+<td>ng-class-odd</td>
+<td>类似 ng-class，但只在奇数行起作用</td>
+</tr>
+<tr>
+<td>ng-click</td>
+<td>定义元素被点击时的行为</td>
+</tr>
+<tr>
+<td>ng-cloak</td>
+<td>在应用正要加载时防止其闪烁</td>
+</tr>
+<tr>
+<td>ng-controller</td>
+<td>定义应用的控制器对象</td>
+</tr>
+<tr>
+<td>ng-copy</td>
+<td>规定拷贝事件的行为</td>
+</tr>
+<tr>
+<td>ng-csp</td>
+<td>修改内容的安全策略</td>
+</tr>
+<tr>
+<td>ng-cut</td>
+<td>规定剪切事件的行为</td>
+</tr>
+<tr>
+<td>ng-dblclick</td>
+<td>规定双击事件的行为</td>
+</tr>
+<tr>
+<td>ng-disabled</td>
+<td>规定一个元素是否被禁用</td>
+</tr>
+<tr>
+<td>ng-focus</td>
+<td>规定聚焦事件的行为</td>
+</tr>
+<tr>
+<td>ng-form</td>
+<td>指定 HTML 表单继承控制器表单</td>
+</tr>
+<tr>
+<td>ng-hide</td>
+<td>隐藏或显示 HTML 元素</td>
+</tr>
+<tr>
+<td>ng-href</td>
+<td>为 the&lt; a&gt; 元素指定链接</td>
+</tr>
+<tr>
+<td>ng-if</td>
+<td>如果条件为 false 移除 HTML 元素</td>
+</tr>
+<tr>
+<td>ng-include</td>
+<td>在应用中包含 HTML 文件</td>
+</tr>
+<tr>
+<td>ng-init</td>
+<td>定义应用的初始化值</td>
+</tr>
+<tr>
+<td>ng-jq</td>
+<td>定义应用必须使用到的库，如：jQuery</td>
+</tr>
+<tr>
+<td>ng-keydown</td>
+<td>规定按下按键事件的行为</td>
+</tr>
+<tr>
+<td>ng-keypress</td>
+<td>规定按下按键事件的行为</td>
+</tr>
+<tr>
+<td>ng-keyup</td>
+<td>规定松开按键事件的行为</td>
+</tr>
+<tr>
+<td>ng-list</td>
+<td>将文本转换为列表 (数组)</td>
+</tr>
+<tr>
+<td>ng-model</td>
+<td>绑定 HTML 控制器的值到应用数据</td>
+</tr>
+<tr>
+<td>ng-model-options</td>
+<td>规定如何更新模型</td>
+</tr>
+<tr>
+<td>ng-mousedown</td>
+<td>规定按下鼠标按键时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseenter</td>
+<td>规定鼠标指针穿过元素时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseleave</td>
+<td>规定鼠标指针离开元素时的行为</td>
+</tr>
+<tr>
+<td>ng-mousemove</td>
+<td>规定鼠标指针在指定的元素中移动时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseover</td>
+<td>规定鼠标指针位于元素上方时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseup</td>
+<td>规定当在元素上松开鼠标按钮时的行为</td>
+</tr>
+<tr>
+<td>ng-non-bindable</td>
+<td>规定元素或子元素不能绑定数据</td>
+</tr>
+<tr>
+<td>ng-open</td>
+<td>指定元素的 open 属性</td>
+</tr>
+<tr>
+<td>ng-options</td>
+<td>在 <!-- raw HTML omitted --> 列表中指定 <!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>ng-paste</td>
+<td>规定粘贴事件的行为</td>
+</tr>
+<tr>
+<td>ng-pluralize</td>
+<td>根据本地化规则显示信息</td>
+</tr>
+<tr>
+<td>ng-readonly</td>
+<td>指定元素的 readonly 属性</td>
+</tr>
+<tr>
+<td>ng-repeat</td>
+<td>定义集合中每项数据的模板</td>
+</tr>
+<tr>
+<td>ng-selected</td>
+<td>指定元素的 selected 属性</td>
+</tr>
+<tr>
+<td>ng-show</td>
+<td>显示或隐藏 HTML 元素</td>
+</tr>
+<tr>
+<td>ng-src</td>
+<td>指定 <!-- raw HTML omitted --> 元素的 src 属性</td>
+</tr>
+<tr>
+<td>ng-srcset</td>
+<td>指定 <!-- raw HTML omitted --> 元素的 srcset 属性</td>
+</tr>
+<tr>
+<td>ng-style</td>
+<td>指定元素的 style 属性</td>
+</tr>
+<tr>
+<td>ng-submit</td>
+<td>规定 onsubmit 事件发生时执行的表达式</td>
+</tr>
+<tr>
+<td>ng-switch</td>
+<td>规定显示或隐藏子元素的条件</td>
+</tr>
+<tr>
+<td>ng-transclude</td>
+<td>规定填充的目标位置</td>
+</tr>
+<tr>
+<td>ng-value</td>
+<td>规定 input 元素的值</td>
+</tr>
+</tbody>
+</table>
+<h1 id="angular事件">Angular事件</h1>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ng-click</td>
+<td>定义元素被点击时的行为</td>
+</tr>
+<tr>
+<td>ng-dblclick</td>
+<td>规定双击事件的行为</td>
+</tr>
+<tr>
+<td>ng-mousedown</td>
+<td>规定按下鼠标按键时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseenter</td>
+<td>规定鼠标指针穿过元素时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseleave</td>
+<td>规定鼠标指针离开元素时的行为</td>
+</tr>
+<tr>
+<td>ng-mousemove</td>
+<td>规定鼠标指针在指定的元素中移动时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseover</td>
+<td>规定鼠标指针位于元素上方时的行为</td>
+</tr>
+<tr>
+<td>ng-mouseup</td>
+<td>规定当在元素上松开鼠标按钮时的行为</td>
+</tr>
+<tr>
+<td>ng-keydown</td>
+<td>规定按下按键事件的行为</td>
+</tr>
+<tr>
+<td>ng-keypress</td>
+<td>规定按下按键事件的行为</td>
+</tr>
+<tr>
+<td>ng-keyup</td>
+<td>规定松开按键事件的行为</td>
+</tr>
+<tr>
+<td>ng-change</td>
+<td>规定在内容改变时要执行的表达式</td>
+</tr>
+</tbody>
+</table>
+<h1 id="angular全局api">Angular全局API</h1>
+<h2 id="转化">转化</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>angular.lowercase()</td>
+<td>将字符串转换为小写</td>
+</tr>
+<tr>
+<td>angular.uppercase()</td>
+<td>将字符串转换为大写</td>
+</tr>
+<tr>
+<td>angular.copy()</td>
+<td>数组或对象深度拷贝</td>
+</tr>
+<tr>
+<td>angular.forEach()</td>
+<td>对象或数组的迭代函数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="比较">比较</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>angular.isArray()</td>
+<td>如果引用的是数组返回 true</td>
+</tr>
+<tr>
+<td>angular.isDate()</td>
+<td>如果引用的是日期返回 true</td>
+</tr>
+<tr>
+<td>angular.isDefined()</td>
+<td>如果引用的已定义返回 true</td>
+</tr>
+<tr>
+<td>angular.isElement()</td>
+<td>如果引用的是 DOM 元素返回 true</td>
+</tr>
+<tr>
+<td>angular.isFunction()</td>
+<td>如果引用的是函数返回 true</td>
+</tr>
+<tr>
+<td>angular.isNumber()</td>
+<td>如果引用的是数字返回 true</td>
+</tr>
+<tr>
+<td>angular.isObject()</td>
+<td>如果引用的是对象返回 true</td>
+</tr>
+<tr>
+<td>angular.isString()</td>
+<td>如果引用的是字符串返回 true</td>
+</tr>
+<tr>
+<td>angular.isUndefined()</td>
+<td>如果引用的未定义返回 true</td>
+</tr>
+<tr>
+<td>angular.equals()</td>
+<td>如果两个对象相等返回 true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="json">JSON</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>angular.fromJson()</td>
+<td>反序列化 JSON 字符串</td>
+</tr>
+<tr>
+<td>angular.toJson()</td>
+<td>序列化 JSON 字符串</td>
+</tr>
+</tbody>
+</table>
+<h2 id="基础">基础</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>angular.bootstrap()</td>
+<td>手动启动 AngularJS</td>
+</tr>
+<tr>
+<td>angular.element()</td>
+<td>包裹着一部分DOM element或者是HTML字符串，把它作为一个jQuery元素来处理。</td>
+</tr>
+<tr>
+<td>angular.module()</td>
+<td>创建，注册或检索 AngularJS 模块</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><a href="http://www.runoob.com/angularjs/angularjs-reference.html">AngularJS 参考手册</a></p>
+</blockquote>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/angular/">Angular</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

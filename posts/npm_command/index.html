@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>npm 常用命令 ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="npm 常用命令
+" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/npm_command/'>npm 常用命令</a></h2>
+                        <span class="date">2017.11.14</span>
+                    </div>
+                    <div class="post_content markdown"><p>npm 常用命令</p>
+<h2 id="npm-install-modulenames">npm install moduleNames</h2>
+<p>安装Node模块</p>
+<blockquote>
+<p>注意事项：如果在使用模块的时候不知道其名字，可以通过http://search.npmjs.org网站按照</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm search indexName    <span class="c1"># 索引值找到想要的模块。npm也提供了查询的功能</span> 
+</code></pre></div><p>安装完毕后会产生一个node_modules目录，其目录下就是安装的各个node模块。node的安装分为全局模式和本地模式。一般情况下会以本地模式运行，包会被安装到和你的应用代码统计的本地node_modules目录下。在全局模式下，Node包会被安装到Node的安装目录下的node_modules下。全局安装命令为</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm install -g moduleName。 <span class="c1"># 获知使用npm set global=true来设定安装模式</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm get global  <span class="c1"># 可以查看当前使用的安装模式</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm install &lt;name&gt; --save   <span class="c1"># 安装的同时，将信息写入package.json中</span>
+</code></pre></div><p>项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包这样代码提交到github时，就不用提交node_modules这个文件夹了。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm install npm@latest -g   <span class="c1"># 更新到最新版本npm</span>
+</code></pre></div><h2 id="npm-view-modulenames">npm view moduleNames</h2>
+<p>查看node模块的package.json文件夹</p>
+<blockquote>
+<p>注意事项：如果想要查看package.json文件夹下某个标签的内容，可以使用</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">npm view moduleName labelName
+</code></pre></div><h2 id="npm-list">npm list</h2>
+<p>查看当前目录下已安装的node包。同命令npm ll/npm ls/npm la</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm list -g --depth <span class="m">0</span>   <span class="c1"># 查看深度为0 的全局安装模块</span> 
+</code></pre></div><blockquote>
+<p>注意事项：Node模块搜索是从代码执行的当前目录开始的，搜索结果取决于当前使用的目录中的node_modules下的内容。 npm list parseable=true可以目录的形式来展现当前安装的所有node包</p>
+</blockquote>
+<h2 id="npm-help">npm help</h2>
+<p>查看帮助命令。如果要单独查看install命令的帮助，可以使用的npm help install</p>
+<h2 id="npm-view-moudlename-dependencies">npm view moudleName dependencies</h2>
+<p>查看包的依赖关系</p>
+<h2 id="npm-view-modulename-repositoryurl">npm view moduleName repository.url</h2>
+<p>查看包的源文件地址</p>
+<h2 id="npm-view-modulename-engines">npm view moduleName engines</h2>
+<p>查看包所依赖的Node的版本</p>
+<h2 id="npm-help-folders">npm help folders</h2>
+<p>查看npm使用的所有文件夹</p>
+<h2 id="npm-rebuild-modulename">npm rebuild moduleName</h2>
+<p>用于更改包内容后进行重建</p>
+<h2 id="npm-outdated">npm outdated</h2>
+<p>检查包是否已经过时，此命令会列出所有已经过时的包，可以及时进行包的更新</p>
+<h2 id="npm-update-modulename">npm update moduleName</h2>
+<p>更新node模块</p>
+<h2 id="npm-uninstall-moudlename">npm uninstall moudleName</h2>
+<p>卸载node模块</p>
+<p>更多<a href="https://npmjs.org/doc/">https://npmjs.org/doc/</a></p></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/npm/">npm</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

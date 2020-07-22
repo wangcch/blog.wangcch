@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>sass 入门（二） ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="不同样式风格嵌套方式 普通变量与默认变量 局部变量与全局变量 嵌套 不同样式风格嵌套方式 嵌套输出方式 nested 展开输出方式 expanded 紧凑输出方式 compact 压缩输出方式 compressed 嵌套输出方式 nested 编译时，添加 &amp;ndash;style nested 参数 sass --watch demo.scss:demo.css --style nested nav { li { display: inline-block; } a { text-decoration:" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/sass_start2/'>sass 入门（二）</a></h2>
+                        <span class="date">2018.01.20</span>
+                    </div>
+                    <div class="post_content markdown"><ol>
+<li><a href="#%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E9%A3%8E%E6%A0%BC%E5%B5%8C%E5%A5%97%E6%96%B9%E5%BC%8F">不同样式风格嵌套方式</a></li>
+<li><a href="#%E6%99%AE%E9%80%9A%E5%8F%98%E9%87%8F%E4%B8%8E%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F">普通变量与默认变量</a></li>
+<li><a href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%8E%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">局部变量与全局变量</a></li>
+<li><a href="#%E5%B5%8C%E5%A5%97">嵌套</a></li>
+</ol>
+<!-- raw HTML omitted -->
+<h1 id="不同样式风格嵌套方式">不同样式风格嵌套方式</h1>
+<ol>
+<li>嵌套输出方式 nested</li>
+<li>展开输出方式 expanded</li>
+<li>紧凑输出方式 compact</li>
+<li>压缩输出方式 compressed</li>
+</ol>
+<h2 id="嵌套输出方式-nested">嵌套输出方式 nested</h2>
+<p>编译时，添加 <em>&ndash;style nested</em> 参数</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sass --watch demo.scss:demo.css --style nested
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt">nav</span> <span class="p">{</span>
+    <span class="nt">li</span> <span class="p">{</span>
+        <span class="nt">display</span><span class="nd">:</span> <span class="nt">inline-block</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">a</span> <span class="p">{</span>
+        <span class="nt">text-decoration</span><span class="nd">:</span> <span class="nt">none</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">nav</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;}</span>
+<span class="nt">nav</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;}</span>
+
+<span class="o">&lt;!</span><span class="nt">--注意大括号--</span><span class="o">&gt;</span>
+
+</code></pre></div><h2 id="展开输出方式-expanded">展开输出方式 expanded</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sass --watch demo.scss:demo.css --style expanded
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">&lt;!</span><span class="nt">--sass</span> <span class="nt">同上--</span><span class="o">&gt;</span>
+
+<span class="o">&lt;!</span><span class="nt">--css--</span><span class="o">&gt;</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="紧凑输出方式-compact">紧凑输出方式 compact</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sass --watch demo.scss:demo.css --style compact
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">&lt;!</span><span class="nt">--sass</span> <span class="nt">同上--</span><span class="o">&gt;</span>
+
+<span class="o">&lt;!</span><span class="nt">--css--</span><span class="o">&gt;</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="p">{</span> <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">a</span> <span class="p">{</span> <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div><h2 id="压缩输出方式-compressed">压缩输出方式 compressed</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sass --watch demo.scss:demo.css --style compressed
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">&lt;!</span><span class="nt">--sass</span> <span class="nt">同上--</span><span class="o">&gt;</span>
+
+<span class="o">&lt;!</span><span class="nt">--css--</span><span class="o">&gt;</span>
+<span class="nt">nav</span> <span class="nt">li</span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;}</span><span class="nt">nav</span> <span class="nt">a</span><span class="p">{</span><span class="k">text-decoration</span><span class="p">:</span><span class="kc">none</span><span class="p">;}</span>
+
+</code></pre></div><h1 id="普通变量与默认变量">普通变量与默认变量</h1>
+<h2 id="普通变量">普通变量</h2>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$width</span><span class="o">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="nc">.demo</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">width</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>编译之后</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">demo</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="默认变量">默认变量</h2>
+<p>sass 的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量之前重新声明下变量即可。</p>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$width</span><span class="o">:</span> <span class="mi">200</span><span class="kt">px</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nc">.demo</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">width</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>编译之后</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">demo</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$width</span><span class="o">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="nv">$width</span><span class="o">:</span> <span class="mi">200</span><span class="kt">px</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nc">.demo</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">width</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>编译之后</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">demo</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h1 id="局部变量与全局变量">局部变量与全局变量</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$width: 200px !default; //定义全局变量
+.demo {
+    $width: 300px; //定义局部变量
+    .test {
+        width: $width;
+    }
+}
+</code></pre></div><blockquote>
+<p>创建变量只适用于感觉确有必要的情况下。不要为了某些骇客行为而声明新变量，这丝毫没有作用。</p>
+</blockquote>
+<h1 id="嵌套">嵌套</h1>
+<ol>
+<li>选择器嵌套</li>
+<li>属性嵌套</li>
+<li>伪类嵌套</li>
+</ol>
+<h2 id="选择器嵌套">选择器嵌套</h2>
+<p>例如对于a标签的应用</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">demo</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">box</span> <span class="p">.</span><span class="nc">demo</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>sass选择器嵌套</p>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.demo</span> <span class="p">{</span>
+    <span class="nt">a</span> <span class="p">{</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="nn">#000</span><span class="p">;</span>
+        <span class="nc">.box</span> <span class="k">&amp;</span> <span class="p">{</span>
+            <span class="nt">color</span><span class="nd">:</span> <span class="nn">#fff</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="属性嵌套">属性嵌套</h2>
+<p>属性嵌套，CSS 的一些属性前缀相同，只是后缀不同</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">demo</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>sass属性嵌套</p>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
+    <span class="nt">font</span><span class="nd">:</span> <span class="p">{</span>
+        <span class="nt">size</span><span class="nd">:</span> <span class="nt">12px</span><span class="p">;</span>
+        <span class="nt">weight</span><span class="nd">:</span> <span class="nt">bold</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="伪类嵌套">伪类嵌套</h2>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">demo</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;伪类&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>sass属性嵌套</p>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.demo</span> <span class="p">{</span>
+    <span class="err">$</span><span class="nd">:before</span> <span class="p">{</span>
+        <span class="nt">content</span><span class="nd">:</span> <span class="s2">&#34;伪类&#34;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/css/">CSS</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/sass/">sass</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

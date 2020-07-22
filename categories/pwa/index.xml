@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PWA on 那那那呀</title>
+    <link>https://blog.wangcch.cc/categories/pwa/</link>
+    <description>Recent content in PWA on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 21 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/categories/pwa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PWA Manifest</title>
+      <link>https://blog.wangcch.cc/posts/pwa_manifest/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/pwa_manifest/</guid>
+      <description>简介 manifest是一种简单的json 数据风格的配置文件，通过对其相应对属性进行配置，才能实现相应对功能，这里可以称manifest 为WEB应用清单。web应用清单可以实现自定义启动画面、打开url</description>
+    </item>
+    
+  </channel>
+</rss>

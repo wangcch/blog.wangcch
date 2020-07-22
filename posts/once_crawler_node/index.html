@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>node 记一次爬虫 ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="一直都知道“爬虫”这个名称，但真正手写没试过。主要还是本人懒，再说也没什么需求。但今天因为需要一个测试数据，对着网页badssl.com，手动敲json文件。真的很多，是在敲不下去，再怎么复制粘贴也受" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/once_crawler_node/'>node 记一次爬虫</a></h2>
+                        <span class="date">2018.03.01</span>
+                    </div>
+                    <div class="post_content markdown"><p>一直都知道“爬虫”这个名称，但真正手写没试过。主要还是本人懒，再说也没什么需求。但今天因为需要一个测试数据，对着网页<a href="https://badssl.com">badssl.com</a>，手动敲json文件。真的很多，是在敲不下去，再怎么复制粘贴也受不了。写个爬虫，数据抓取，再格式化输出一下岂不是很棒。我感觉可以。</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>依赖： cheerio: 一个nodejs抓取页面模块 <a href="https://github.com/cheeriojs/cheerio">https://github.com/cheeriojs/cheerio</a></p>
+</blockquote>
+<p>分几个步骤吧</p>
+<ol>
+<li>获取网页数据</li>
+<li>数据整理</li>
+<li>文件输出</li>
+</ol>
+<h2 id="获取网页数据">获取网页数据</h2>
+<p>文档：</p>
+<ol>
+<li><a href="http://nodejs.cn/api/http.html#http_http_get_options_callback">http</a></li>
+<li><a href="http://nodejs.cn/api/https.html#https_https_get_options_callback">https</a></li>
+</ol>
+<p>两个接口服务，更具你抓取的网站条件而定。这里以https为例（http的直接替换<!-- raw HTML omitted -->https<!-- raw HTML omitted -->就行了，详细见上方文档）</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// getbadssl.js
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;https&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;https://badssl.com&#39;</span><span class="p">;</span>
+
+<span class="nx">https</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="nx">data</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">html</span><span class="p">)</span>       <span class="c1">// 打印出来会发现这是badssl首页的全部html内容
+</span><span class="c1"></span>  <span class="p">});</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;get error&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div><h2 id="数据整理">数据整理</h2>
+<blockquote>
+<p>环境构建</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">// 在文件中初始化项目
+npm init 
+
+// 安装cheerio
+npm install cheerio --save
+
+// 运行getbadssl.js
+node getbadssl.js
+</code></pre></div><p>这时文件目录</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">-node_modules
+-getbadssl.js
+-package-lock.json
+-package.json
+</code></pre></div><hr>
+<p>回归正题</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// getbadssl.js
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;https&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cheerio</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cheerio&#39;</span><span class="p">)</span>    <span class="c1">// 引入cheerio
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;https://badssl.com&#39;</span><span class="p">;</span>
+
+<span class="nx">https</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="nx">data</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">getData</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>      <span class="c1">// 传递
+</span><span class="c1"></span>  <span class="p">});</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;get error&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// 数据抓取处理
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getData</span><span class="p">(</span><span class="nx">html</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">html</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">cheerio</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>     <span class="c1">// cheerio
+</span><span class="c1"></span>    
+    <span class="cm">/*
+</span><span class="cm">    * 以下数据处理，根据实际的情况而定
+</span><span class="cm">    *  
+</span><span class="cm">    * 这边化简一下源程序，便于理解，就以抓取 a: url 为例
+</span><span class="cm">    */</span>
+    <span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#links&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">listData</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">links</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.column&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+      <span class="nx">column</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.group&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="nx">group</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    	  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    	  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{};</span>
+    	  <span class="nx">data</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">);</span>
+    	  <span class="nx">data</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">html</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&lt;/span&gt;&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+    	  <span class="nx">listData</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="p">})</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;lists&#34;</span><span class="o">:</span> <span class="nx">listData</span><span class="p">};</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;null data&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="文件输出">文件输出</h2>
+<p>既然已经这样了，我们就把抓取到的文件直接输出文件为json文件</p>
+<blockquote>
+<p><a href="http://nodejs.cn/api/fs.html#fs_fs_writefile_file_data_options_callback">Node.js 文件系统 fs </a></p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 上述 处理数据之后，传给writeFile()输出文件
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">getData</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
+<span class="nx">writeFile</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">writeFile</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s1">&#39;lists.json&#39;</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&#34;\t&#34;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;success to ./lists.json&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div><p>我们再次执行<!-- raw HTML omitted -->node getbadssl.js<!-- raw HTML omitted -->，我们会发现当前文件夹内多出<strong>lists.json</strong>文件
+大致内容如下</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">lists.json</span>
+<span class="p">{</span>
+  <span class="nt">&#34;lists&#34;</span><span class="p">:</span> <span class="p">[</span>
+  	<span class="p">{</span>
+  	  <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;/dashboard/&#34;</span><span class="p">,</span>
+  	  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;Dashboard&#34;</span>
+  	<span class="p">},</span>
+  	<span class="p">{</span>
+  	  <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://expired.badssl.com/&#34;</span><span class="p">,</span>
+  	  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;expired&#34;</span>
+  	<span class="p">},</span>
+  	<span class="p">{</span>
+  	  <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://wrong.host.badssl.com/&#34;</span><span class="p">,</span>
+  	  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;wrong.host&#34;</span>
+  	<span class="p">},</span>
+  	<span class="p">{</span>
+  	  <span class="err">...</span>
+  	<span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/node.js/">node.js</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/cheerio/">cheerio</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/fs/">fs</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/https/">https</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

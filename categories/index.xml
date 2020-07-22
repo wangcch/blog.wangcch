@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 那那那呀</title>
+    <link>https://blog.wangcch.cc/categories/</link>
+    <description>Recent content in Categories on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS</title>
+      <link>https://blog.wangcch.cc/categories/css/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>https://blog.wangcch.cc/categories/vue/</link>
+      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://blog.wangcch.cc/categories/vim/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://blog.wangcch.cc/categories/js/</link>
+      <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node.js</title>
+      <link>https://blog.wangcch.cc/categories/node.js/</link>
+      <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PWA</title>
+      <link>https://blog.wangcch.cc/categories/pwa/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/pwa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://blog.wangcch.cc/categories/nginx/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>other</title>
+      <link>https://blog.wangcch.cc/categories/other/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sass</title>
+      <link>https://blog.wangcch.cc/categories/sass/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/sass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>https://blog.wangcch.cc/categories/angular/</link>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://blog.wangcch.cc/categories/network/</link>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>https://blog.wangcch.cc/categories/npm/</link>
+      <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://blog.wangcch.cc/categories/html/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/categories/html/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

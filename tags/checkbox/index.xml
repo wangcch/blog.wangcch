@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>checkbox on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/checkbox/</link>
+    <description>Recent content in checkbox on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/checkbox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Checkbox自定义menu button</title>
+      <link>https://blog.wangcch.cc/posts/css_menu_icon/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/css_menu_icon/</guid>
+      <description>使用 input&amp;gt;checkbox 实现菜单按钮 前言 记得以前写的这种类似开关都是由点击事件驱动样式（监听点击事件-&amp;gt;动态添加样式）。现在看来有点麻烦，不能确定唯一性，单一值驱动相关事件。 自上次总结了 自定义 radio 单选 checkbo</description>
+    </item>
+    
+    <item>
+      <title>自定义 input&gt;radio 单选</title>
+      <link>https://blog.wangcch.cc/posts/custom_radio/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/custom_radio/</guid>
+      <description>自定义radio/checkbox 单选/多选样式，原理都是一样的 &amp;lt;input type=&amp;#34;radio&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; /&amp;gt; 前言 是在写个react练手项目react-todo中选择状态（all、active、completed）的选中表示。开始也是</description>
+    </item>
+    
+  </channel>
+</rss>

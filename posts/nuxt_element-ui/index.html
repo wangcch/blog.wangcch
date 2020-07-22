@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>Nuxt element-ui ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="Nuxt 引入js插件 以element-ui 为例
+" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/nuxt_element-ui/'>Nuxt element-ui</a></h2>
+                        <span class="date">2018.04.12</span>
+                    </div>
+                    <div class="post_content markdown"><p>Nuxt 引入js插件 以element-ui 为例</p>
+<h2 id="nuxtconfigjs">nuxt.config.js</h2>
+<blockquote>
+<p>可以通过<a href="https://zh.nuxtjs.org/guide/configuration">nuxt.config.js</a> 覆盖Nuxt默认配置</p>
+</blockquote>
+<p>坑点：<strong>theme-chalk</strong>。google搜了一下，theme-default（看了下帖子时间2016年？）。其实主要还是去/node_modules/element-ui/lib/&hellip; 下自己看下</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// nuxt.config.js
+</span><span class="c1"></span>
+<span class="c1">// 生成的 vendor.bundle.js 文件中新模块，以减少应用 bundle 的体积
+</span><span class="c1"></span><span class="nx">vender</span><span class="o">:</span><span class="p">[</span>
+   <span class="s1">&#39;element-ui&#39;</span>
+<span class="p">],</span>
+
+<span class="c1">//  配置使用 Vue.js 插件。
+</span><span class="c1"></span><span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;~plugins/element-ui&#39;</span><span class="p">,</span> <span class="nx">ssr</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
+<span class="p">],</span>
+<span class="nx">css</span><span class="o">:</span> <span class="p">[</span>
+  <span class="c1">// element样式全局引用
+</span><span class="c1"></span>  <span class="s1">&#39;element-ui/lib/theme-chalk/index.css&#39;</span>
+<span class="p">]</span>
+  
+</code></pre></div><p>element-ui 搭配插件按需引入组件主题</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// nuxt.config.js
+</span><span class="c1"></span>
+<span class="nx">babel</span><span class="o">:</span><span class="p">{</span>
+  <span class="s2">&#34;plugins&#34;</span><span class="o">:</span> <span class="p">[[</span><span class="s2">&#34;component&#34;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&#34;libraryName&#34;</span><span class="o">:</span> <span class="s2">&#34;element-ui&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;styleLibraryName&#34;</span><span class="o">:</span> <span class="s2">&#34;theme-chalk&#34;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;transform-async-to-generator&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;transform-runtime&#39;</span>
+  <span class="p">]]],</span>
+  <span class="nx">comments</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="plugins">plugins</h2>
+<blockquote>
+<p>Nuxt 插件目录 (<a href="https://zh.nuxtjs.org/guide/plugins">plugins</a>)</p>
+</blockquote>
+<p>新建element-ui.js文件</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// plugins/element-ui.js
+</span><span class="c1"></span>
+<span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
+<span class="kr">import</span> <span class="nx">Element</span> <span class="nx">from</span> <span class="s1">&#39;element-ui&#39;</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Element</span><span class="p">)</span>
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/vue/">Vue</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/nuxt/">Nuxt</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/element/">element</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

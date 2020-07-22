@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>HTML 移动前端viewport ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="在开发响应式网站时Wangcch&amp;rsquo;s CV，并未在移动窗口进行测试。结果在服务器部署测试时手机并没有自适应窗口，只是显示网页缩放版本。后来查资料，一行代码解决&amp;hellip;
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&amp;quot;/&amp;gt; " />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/viewport/'>HTML 移动前端viewport</a></h2>
+                        <span class="date">2017.06.05</span>
+                    </div>
+                    <div class="post_content markdown"><p>在开发响应式网站时<a href="'http://cv.theyear.space'">Wangcch&rsquo;s CV</a>，并未在移动窗口进行测试。结果在服务器部署测试时手机并没有自适应窗口，只是显示网页缩放版本。后来查资料，一行代码解决&hellip;</p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+ initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&quot;/&gt; 
+</code></pre>
+<h2 id="viewport概念">viewport概念</h2>
+<p>viewport:视口，视觉窗口，显示区域。viewport是用户网页的可视区域。手机浏览器是把页面放在一个虚拟的&quot;窗口&rdquo;（viewport）中，通常这个虚拟的&quot;窗口&rdquo;（viewport）比屏幕宽，这样就不用把每个网页挤到很小的窗口中（这样会破坏没有针对手机浏览器优化的网页的布局），用户可以通过平移和缩放来看网页的不同部分。</p>
+<ol>
+<li>
+<p>layout viewport(布局视口)
+一般为移动设备浏览器默认设置了一个viewport原标签，定义一个虚拟的layout view(布局视口)，使pc上面的网页基本能在手机上呈现，一般模式支持手动缩放网页。</p>
+</li>
+<li>
+<p>visual viewport(视觉视口)
+visual viewport（视觉视口）备物理屏幕的可视区域，屏幕显示器的物理像素，同样尺寸的屏幕，像素密度大的设备，硬件像素会更多。</p>
+</li>
+<li>
+<p>ideal viewpore(理想视口)
+ideal viewport（理想视口）通常是屏幕分辨率.
+dip （设备逻辑像素）跟设备的硬件像素无关的。一个 dip 在任意像素密度的设备屏幕上都占据相同的空间。页面通过逻辑像素显示。<!-- raw HTML omitted -->
+逻辑像素宽度*倍率 = 物理像素宽度<!-- raw HTML omitted -->
+不同设备的倍率一般不同，更多设备ideal viewport可以查看<a href="http://viewportsizes.com/">viewportsizes</a></p>
+</li>
+</ol>
+<h2 id="css像素">CSS像素</h2>
+<p>CSS像素（px）用于页面布局的单位。样式的像素尺寸（例如 width: 100px）是以CSS像素为单位指定的。CSS像素与 dip 的比例即为网页的缩放比例，如果网页没有缩放，那么一个CSS像素就对应一个 dip（设备逻辑像素）。</p>
+<h2 id="利用meta标签对viewport进行控制">利用meta标签对viewport进行控制</h2>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+ initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&quot;/&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>取值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>正整数 或 device-width</td>
+<td>定义视口窗口的宽度，单位为像素</td>
+</tr>
+<tr>
+<td>height</td>
+<td>正整数 或 device-height</td>
+<td>定义视口的高度，单位为像素，一般不用</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>[0.0-10.0]</td>
+<td>定义初始缩放值</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>[0.0-10.0]</td>
+<td>定义缩小最小比例，它必须小于或等于maximum-scale设置</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>[0.0-10.0]</td>
+<td>定义放大最大比例，它必须大于或等于minimum-scale设置</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>yes/no</td>
+<td>定义是否允许用户手动缩放页面，默认值yes</td>
+</tr>
+</tbody>
+</table>
+<p>设置viewport布局视口，宽度为设备宽度，禁止用户缩放，默认显示无缩放显示（即为1.0倍数）。</p>
+<p>感谢:)</p></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/html/">HTML</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/viewport/">viewport</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

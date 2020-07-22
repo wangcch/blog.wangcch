@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>visibility on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/visibility/</link>
+    <description>Recent content in visibility on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/visibility/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS visibility与display可见性区别</title>
+      <link>https://blog.wangcch.cc/posts/visibility_display/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/visibility_display/</guid>
+      <description>&lt;p&gt;主要区别：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;visibility:hidden//设置的不可见的元素任然会占据页面空间。	
+ display:none	 //因display属性主要是框类型，none 隐藏元素则不会占据原有空间
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

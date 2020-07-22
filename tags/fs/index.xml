@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fs on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/fs/</link>
+    <description>Recent content in fs on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/fs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>node 记一次爬虫</title>
+      <link>https://blog.wangcch.cc/posts/once_crawler_node/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/once_crawler_node/</guid>
+      <description>一直都知道“爬虫”这个名称，但真正手写没试过。主要还是本人懒，再说也没什么需求。但今天因为需要一个测试数据，对着网页badssl.com，手动敲json文件。真的很多，是在敲不下去，再怎么复制粘贴也受</description>
+    </item>
+    
+  </channel>
+</rss>

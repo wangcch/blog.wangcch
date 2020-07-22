@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>那那那呀</title>
+    <link>https://blog.wangcch.cc/</link>
+    <description>Recent content on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Checkbox自定义menu button</title>
+      <link>https://blog.wangcch.cc/posts/css_menu_icon/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/css_menu_icon/</guid>
+      <description>使用 input&amp;gt;checkbox 实现菜单按钮 前言 记得以前写的这种类似开关都是由点击事件驱动样式（监听点击事件-&amp;gt;动态添加样式）。现在看来有点麻烦，不能确定唯一性，单一值驱动相关事件。 自上次总结了 自定义 radio 单选 checkbo</description>
+    </item>
+    
+    <item>
+      <title>自定义 input&gt;radio 单选</title>
+      <link>https://blog.wangcch.cc/posts/custom_radio/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/custom_radio/</guid>
+      <description>自定义radio/checkbox 单选/多选样式，原理都是一样的 &amp;lt;input type=&amp;#34;radio&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; /&amp;gt; 前言 是在写个react练手项目react-todo中选择状态（all、active、completed）的选中表示。开始也是</description>
+    </item>
+    
+    <item>
+      <title>Vue Props</title>
+      <link>https://blog.wangcch.cc/posts/vue_props/</link>
+      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue_props/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tmux 简单配置</title>
+      <link>https://blog.wangcch.cc/posts/tmux_conf/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/tmux_conf/</guid>
+      <description>Tmux 终端分屏利器。运行多个终端会话，你还可以通过 Tmux 使终端会话运行于后台或是按需接入、断开会话。实用高效 为什么配置 受不了ctrl + b（这两个组合键每次按的时候都要停顿一下&amp;hellip;），还有% &amp;ldq</description>
+    </item>
+    
+    <item>
+      <title>HTML5 History模式配置 (Node.js)</title>
+      <link>https://blog.wangcch.cc/posts/spa_history/</link>
+      <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/spa_history/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;vue-router 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nuxt element-ui</title>
+      <link>https://blog.wangcch.cc/posts/nuxt_element-ui/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/nuxt_element-ui/</guid>
+      <description>&lt;p&gt;Nuxt 引入js插件 以element-ui 为例&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx Node 服务器简单代理方案</title>
+      <link>https://blog.wangcch.cc/posts/nginx&#43;node_server_simple_proxy_program/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/nginx&#43;node_server_simple_proxy_program/</guid>
+      <description>简单使用Nginx反向代理Node服务 前言 一直处于todo状态的东西，但本人比较懒，一直没写，但却用了很久。应该是去年开始线上服务器从windows server转到CentOS。（windows ser</description>
+    </item>
+    
+    <item>
+      <title>vuex 简单案例</title>
+      <link>https://blog.wangcch.cc/posts/vuex_simple_case/</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vuex_simple_case/</guid>
+      <description>Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。 Vuex 是什么 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种</description>
+    </item>
+    
+    <item>
+      <title>PWA Manifest</title>
+      <link>https://blog.wangcch.cc/posts/pwa_manifest/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/pwa_manifest/</guid>
+      <description>简介 manifest是一种简单的json 数据风格的配置文件，通过对其相应对属性进行配置，才能实现相应对功能，这里可以称manifest 为WEB应用清单。web应用清单可以实现自定义启动画面、打开url</description>
+    </item>
+    
+    <item>
+      <title>axios 好东西</title>
+      <link>https://blog.wangcch.cc/posts/axios/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/axios/</guid>
+      <description>&lt;p&gt;一个用于浏览器和node.js的基于Promise的HTTP客户端。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS yum install nginx</title>
+      <link>https://blog.wangcch.cc/posts/centos-yum_install_nginx/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/centos-yum_install_nginx/</guid>
+      <description>CentOS 7 yum install -y nginx 安装Nginx源 rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm /etc/yum.repos.d/ -&amp;gt; nginx.repo 安装Nginx yum install -y nginx # 输入命令 whereis nginx # 输出 nginx: /usr/sbin/nginx /usr/lib64/nginx /etc/nginx /usr/share/nginx # # /etc/nginx Nginx 配置路径 # 常用命令 # 启动 nginx # 测试配置 nginx -t # 重启 nginx -s reload # 关闭 nginx -s stop # 优雅关闭(不接受新的连接请求，等待</description>
+    </item>
+    
+    <item>
+      <title>node 记一次爬虫</title>
+      <link>https://blog.wangcch.cc/posts/once_crawler_node/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/once_crawler_node/</guid>
+      <description>一直都知道“爬虫”这个名称，但真正手写没试过。主要还是本人懒，再说也没什么需求。但今天因为需要一个测试数据，对着网页badssl.com，手动敲json文件。真的很多，是在敲不下去，再怎么复制粘贴也受</description>
+    </item>
+    
+    <item>
+      <title>vue-cli API代理</title>
+      <link>https://blog.wangcch.cc/posts/vue-cli_api_proxy/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue-cli_api_proxy/</guid>
+      <description>使用proxyTable进行跨域API代理 // config/index.js module.exports = { dev: { proxyTable: { // 将所有以 /api 开头的请求通过 jsonplaceholder 代理 &amp;#39;/api&amp;#39;: { target: &amp;#39;https://wangcch.cc&amp;#39;, changeOrigin: true, pathRewrite: { &amp;#39;^/api&amp;#39;: &amp;#39;&amp;#39; } } } } } 调用 this.$http.get(&amp;#39;/api/demo&amp;#39;).then(function(res){ console.log(res.data); }) 依赖 npm install vue-resource</description>
+    </item>
+    
+    <item>
+      <title>添加VS Code命令行</title>
+      <link>https://blog.wangcch.cc/posts/vs-code_command/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vs-code_command/</guid>
+      <description>习惯用atom的都知道，可以在文件目录中启动atom，非常方便。使用vs却发现没有。网上搜索配置.bash_profile，然而我没有这个文件，手动添加后可以使用，但是终端重启后又回失效。 最后在官网找</description>
+    </item>
+    
+    <item>
+      <title>vim 基本命令，常用命令</title>
+      <link>https://blog.wangcch.cc/posts/vim_command/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vim_command/</guid>
+      <description>基础命令 vim #命令行中进入vim编辑器 Esc #退出i(插入模式)，取消操纵 :! command #暂时离开vi到指令模式下执行command命令，如：!ls 执行ls命令 :sh #进入shell命令行,执行完命令后ctrl+d退出重</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（四）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start4/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start4/</guid>
+      <description>插值#{} 运算 控制指令 插值# @mixinset-value($side, $value) { margin-#{$side}: $value; } .demo { @includeset-value(top, 15px); } 编译 .demo { margin-top: 15px; } 用处无限大，等待你发掘。 运算 加法 $box-width: 100px; $item-width: 50px; .demo { width: $box-width - $item-width; } .demo { width: 50px; } 不同的单位类型相加会报错 减法 -同理 乘法 *同理 除法 /同理 控制指令 @if 根据条件</description>
+    </item>
+    
+    <item>
+      <title>Angular 参考手册</title>
+      <link>https://blog.wangcch.cc/posts/angular_reference_manual/</link>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/angular_reference_manual/</guid>
+      <description>Angular 指令 Angular 事件 Angular 全局API Angular指令 指令 描述 ng-app 定义应用程序的根元素。 ng-bind 绑定 HTML 元素到应用程序数据 ng-bind-html 绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML 字符串中危险字符 ng-bind-template 规定要使用模板替换的文本内容 ng-blur 规定 blur 事件的</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（三）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start3/</link>
+      <pubDate>Wed, 31 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start3/</guid>
+      <description>混合宏 扩展/继承 [占位符](#占位符 %placeholder) 混合宏 当相同的类型变得越来越多，简单的变量已经达不到我们的要求，这时我们就需要混合宏来帮我们完成。 声明混合宏 1. 不带参数混合宏 @mixinborder-radius { -webkit-border-radius: 5px; border-radius: 5px; } @mixin用于声明混合</description>
+    </item>
+    
+    <item>
+      <title>js 循环延时踩坑</title>
+      <link>https://blog.wangcch.cc/posts/js_settimeout_hole/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/js_settimeout_hole/</guid>
+      <description>为什么遇到循环延时操作了。一切源于在小程序开发过程中循环生成多个二维码事件，二维码画图太慢，在读取canvas画图地址时，不给一定盾延时是无法读取到图片地址的。再加上小程序不支持多线程。画图需要一定的</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（二）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start2/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start2/</guid>
+      <description>不同样式风格嵌套方式 普通变量与默认变量 局部变量与全局变量 嵌套 不同样式风格嵌套方式 嵌套输出方式 nested 展开输出方式 expanded 紧凑输出方式 compact 压缩输出方式 compressed 嵌套输出方式 nested 编译时，添加 &amp;ndash;style nested 参数 sass --watch demo.scss:demo.css --style nested nav { li { display: inline-block; } a { text-decoration:</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（一）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start1/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start1/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sass 是一门高于 CSS的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
+&lt;a href=&#34;http://sass-lang.com&#34;&gt;来自官网sass-lang.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTTP 状态码</title>
+      <link>https://blog.wangcch.cc/posts/http_status_code/</link>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/http_status_code/</guid>
+      <description>&lt;p&gt;HTTP状态码（英语：HTTP Status Code）是用以表示网页服务器超文本传输协议响应状态的3位数字代码。它由 RFC 2616 规范定义的，并得到 RFC 2518、RFC 2817、RFC 2295、RFC 2774 与 RFC 4918 等规范扩展。所有状态码的第一个数字代表了响应的五种状态之一。所示的消息短语是典型的，但是可以提供任何可读取的替代方案。 除非另有说明，状态码是HTTP / 1.1标准（RFC 7231）的一部分。&lt;/p&gt;
+&lt;p&gt;HTTP状态码的官方注册表由互联网号码分配局（Internet Assigned Numbers Authority）维护。&lt;/p&gt;
+&lt;p&gt;微软互联网信息服务 （Microsoft Internet Information Services）有时会使用额外的十进制子代码来获取更多具体信息，但是这些子代码仅出现在响应有效内容和文档中，而不是代替实际的HTTP状态代码&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>npm 常用命令</title>
+      <link>https://blog.wangcch.cc/posts/npm_command/</link>
+      <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/npm_command/</guid>
+      <description>&lt;p&gt;npm 常用命令&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>get put post delete 区别</title>
+      <link>https://blog.wangcch.cc/posts/get_put_post_delete/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/get_put_post_delete/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;查看&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PUT&lt;/td&gt;
+&lt;td&gt;更新与创建&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POST&lt;/td&gt;
+&lt;td&gt;创建&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;td&gt;删除&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vue 常用UI组件</title>
+      <link>https://blog.wangcch.cc/posts/vue_ui/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue_ui/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Muse-UI&lt;/td&gt;
+&lt;td&gt;Mint UI&lt;/td&gt;
+&lt;td&gt;iview&lt;/td&gt;
+&lt;td&gt;vue-mui&lt;/td&gt;
+&lt;td&gt;radon-ui&lt;/td&gt;
+&lt;td&gt;antd vue&lt;/td&gt;
+&lt;td&gt;weex&lt;/td&gt;
+&lt;td&gt;element&lt;/td&gt;
+&lt;td&gt;N3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS 清除float浮动</title>
+      <link>https://blog.wangcch.cc/posts/clear_float/</link>
+      <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/clear_float/</guid>
+      <description>&lt;p&gt;使用浮动的情况有很多，比如页面布局(&lt;code&gt;float:left&lt;/code&gt; &lt;code&gt;float:right&lt;/code&gt;)、取消块元素的独占一行等等。浮动对页面的主要影响是，当父盒子没有设置高，子盒子在父盒子中进行浮动。由于父盒子的高度为0，下面的元素会自动补位。这时候需要清除浮动影响。还有一点是今天遇到的所以准备整理一下，就是有些响应式界面并不是清除浮动，而是对浮动的去除。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTTP与TCP的区别</title>
+      <link>https://blog.wangcch.cc/posts/http_tcp/</link>
+      <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/http_tcp/</guid>
+      <description>&lt;p&gt;TCP是传输层，http是应用层。http是要基于TCP连接基础上的，TCP就是单纯建立连接，不涉及任何我们需要请求的实际数据，简单的传输。http是用来收发数据，即实际应用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTML 移动前端viewport</title>
+      <link>https://blog.wangcch.cc/posts/viewport/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/viewport/</guid>
+      <description>&lt;p&gt;在开发响应式网站时&lt;a href=&#34;&#39;http://cv.theyear.space&#39;&#34;&gt;Wangcch&amp;rsquo;s CV&lt;/a&gt;，并未在移动窗口进行测试。结果在服务器部署测试时手机并没有自适应窗口，只是显示网页缩放版本。后来查资料，一行代码解决&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,
+ initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&amp;quot;/&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS 几种垂直居中分享</title>
+      <link>https://blog.wangcch.cc/posts/vertical_center/</link>
+      <pubDate>Sun, 04 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vertical_center/</guid>
+      <description>&lt;p&gt;分享几种自己积累的垂直居中方法，感觉目前实现垂直居中的一种是绝对定位，物理位移来实现。另一种是通过特定布局属性来实现，如文中提到的flex弹性布局和table表格布局实现。
+（努力后续持续更新&amp;hellip;）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS visibility与display可见性区别</title>
+      <link>https://blog.wangcch.cc/posts/visibility_display/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/visibility_display/</guid>
+      <description>&lt;p&gt;主要区别：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;visibility:hidden//设置的不可见的元素任然会占据页面空间。	
+ display:none	 //因display属性主要是框类型，none 隐藏元素则不会占据原有空间
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

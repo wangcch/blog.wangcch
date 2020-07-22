@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on 那那那呀</title>
+    <link>https://blog.wangcch.cc/categories/vim/</link>
+    <description>Recent content in vim on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 26 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tmux 简单配置</title>
+      <link>https://blog.wangcch.cc/posts/tmux_conf/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/tmux_conf/</guid>
+      <description>Tmux 终端分屏利器。运行多个终端会话，你还可以通过 Tmux 使终端会话运行于后台或是按需接入、断开会话。实用高效 为什么配置 受不了ctrl + b（这两个组合键每次按的时候都要停顿一下&amp;hellip;），还有% &amp;ldq</description>
+    </item>
+    
+    <item>
+      <title>vim 基本命令，常用命令</title>
+      <link>https://blog.wangcch.cc/posts/vim_command/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vim_command/</guid>
+      <description>基础命令 vim #命令行中进入vim编辑器 Esc #退出i(插入模式)，取消操纵 :! command #暂时离开vi到指令模式下执行command命令，如：!ls 执行ls命令 :sh #进入shell命令行,执行完命令后ctrl+d退出重</description>
+    </item>
+    
+  </channel>
+</rss>

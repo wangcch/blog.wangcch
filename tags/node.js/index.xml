@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>node.js on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/node.js/</link>
+    <description>Recent content in node.js on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 24 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML5 History模式配置 (Node.js)</title>
+      <link>https://blog.wangcch.cc/posts/spa_history/</link>
+      <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/spa_history/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;vue-router 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx Node 服务器简单代理方案</title>
+      <link>https://blog.wangcch.cc/posts/nginx&#43;node_server_simple_proxy_program/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/nginx&#43;node_server_simple_proxy_program/</guid>
+      <description>简单使用Nginx反向代理Node服务 前言 一直处于todo状态的东西，但本人比较懒，一直没写，但却用了很久。应该是去年开始线上服务器从windows server转到CentOS。（windows ser</description>
+    </item>
+    
+    <item>
+      <title>axios 好东西</title>
+      <link>https://blog.wangcch.cc/posts/axios/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/axios/</guid>
+      <description>&lt;p&gt;一个用于浏览器和node.js的基于Promise的HTTP客户端。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>node 记一次爬虫</title>
+      <link>https://blog.wangcch.cc/posts/once_crawler_node/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/once_crawler_node/</guid>
+      <description>一直都知道“爬虫”这个名称，但真正手写没试过。主要还是本人懒，再说也没什么需求。但今天因为需要一个测试数据，对着网页badssl.com，手动敲json文件。真的很多，是在敲不下去，再怎么复制粘贴也受</description>
+    </item>
+    
+  </channel>
+</rss>

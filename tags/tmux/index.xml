@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tmux on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/tmux/</link>
+    <description>Recent content in tmux on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 26 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tmux 简单配置</title>
+      <link>https://blog.wangcch.cc/posts/tmux_conf/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/tmux_conf/</guid>
+      <description>Tmux 终端分屏利器。运行多个终端会话，你还可以通过 Tmux 使终端会话运行于后台或是按需接入、断开会话。实用高效 为什么配置 受不了ctrl + b（这两个组合键每次按的时候都要停顿一下&amp;hellip;），还有% &amp;ldq</description>
+    </item>
+    
+  </channel>
+</rss>

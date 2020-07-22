@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/vue/</link>
+    <description>Recent content in Vue on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue Props</title>
+      <link>https://blog.wangcch.cc/posts/vue_props/</link>
+      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue_props/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nuxt element-ui</title>
+      <link>https://blog.wangcch.cc/posts/nuxt_element-ui/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/nuxt_element-ui/</guid>
+      <description>&lt;p&gt;Nuxt 引入js插件 以element-ui 为例&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vuex 简单案例</title>
+      <link>https://blog.wangcch.cc/posts/vuex_simple_case/</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vuex_simple_case/</guid>
+      <description>Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。 Vuex 是什么 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种</description>
+    </item>
+    
+    <item>
+      <title>vue-cli API代理</title>
+      <link>https://blog.wangcch.cc/posts/vue-cli_api_proxy/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue-cli_api_proxy/</guid>
+      <description>使用proxyTable进行跨域API代理 // config/index.js module.exports = { dev: { proxyTable: { // 将所有以 /api 开头的请求通过 jsonplaceholder 代理 &amp;#39;/api&amp;#39;: { target: &amp;#39;https://wangcch.cc&amp;#39;, changeOrigin: true, pathRewrite: { &amp;#39;^/api&amp;#39;: &amp;#39;&amp;#39; } } } } } 调用 this.$http.get(&amp;#39;/api/demo&amp;#39;).then(function(res){ console.log(res.data); }) 依赖 npm install vue-resource</description>
+    </item>
+    
+    <item>
+      <title>Vue 常用UI组件</title>
+      <link>https://blog.wangcch.cc/posts/vue_ui/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vue_ui/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Muse-UI&lt;/td&gt;
+&lt;td&gt;Mint UI&lt;/td&gt;
+&lt;td&gt;iview&lt;/td&gt;
+&lt;td&gt;vue-mui&lt;/td&gt;
+&lt;td&gt;radon-ui&lt;/td&gt;
+&lt;td&gt;antd vue&lt;/td&gt;
+&lt;td&gt;weex&lt;/td&gt;
+&lt;td&gt;element&lt;/td&gt;
+&lt;td&gt;N3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

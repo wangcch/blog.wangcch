@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>Nginx Node 服务器简单代理方案 ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="简单使用Nginx反向代理Node服务 前言 一直处于todo状态的东西，但本人比较懒，一直没写，但却用了很久。应该是去年开始线上服务器从windows server转到CentOS。（windows ser" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/nginx&#43;node_server_simple_proxy_program/'>Nginx Node 服务器简单代理方案</a></h2>
+                        <span class="date">2018.03.25</span>
+                    </div>
+                    <div class="post_content markdown"><p>简单使用Nginx反向代理Node服务</p>
+<!-- raw HTML omitted -->
+<h2 id="前言">前言</h2>
+<p>一直处于todo状态的东西，但本人比较懒，一直没写，但却用了很久。应该是去年开始线上服务器从windows server转到CentOS。（windows server的傻瓜式操作确实很low）当然WS的应用太占内存（类似XAMPP的应用在我的1核1G的学生机根本不行，远程桌面都进不去，报内存不足），所以选择CentOS是必然结果。</p>
+<p>好，回归正题：Nginx反向代理node服务，使用<strong>pm2</strong>做node服务管理。</p>
+<blockquote>
+<p><a href="http://pm2.keymetrics.io">pm2</a> 一个带有负载均衡功能的Node应用的进程管理器.</p>
+</blockquote>
+<p><strong>为什么使用Nginx反向代理？</strong></p>
+<p>很简单，nginx不会用。：）
+好吧，当然Nginx 本身就是是一个很强大的高性能Web和反向代理服务器。</p>
+<h2 id="准备">准备</h2>
+<ol>
+<li>install nginx</li>
+</ol>
+<blockquote>
+<p><a href="http://blog.theyear.space/2018/03/07/CentOS%20yum_install_nginx/#more">参考：CentOS yum install nginx</a></p>
+</blockquote>
+<ol start="2">
+<li>install node</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum install node
+</code></pre></div><ol start="3">
+<li>install pm2</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm install pm2 -g
+</code></pre></div><h2 id="node服务">node服务</h2>
+<ol>
+<li>初始化
+新建一个项目文件夹，创建一个 package.json 文件</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkdir demoapp
+<span class="nb">cd</span> demoapp
+
+npm init
+</code></pre></div><ol start="2">
+<li>express</li>
+</ol>
+<blockquote>
+<p>使用 <a href="http://www.expressjs.com.cn">express</a> 框架 (以使用express为例)</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm install express --save
+</code></pre></div><ol start="3">
+<li>新建app.js</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">vim app.js
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// app.js
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="c1">// 设置端口
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="c1">// express 托管静态文件 ./public 文件夹下
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;public&#39;</span><span class="p">)));</span>
+
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;static server start on port:&#39;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div><ol start="4">
+<li>创建静态文件目录</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkdir public
+</code></pre></div><p>将你打包好的文件放置在public 文件夹下
+5. 测试</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">node app.js
+</code></pre></div><p>访问 you_ip:2000 查看是否可用，ctrl+c 关闭服务</p>
+<h2 id="pm2进程管理">pm2进程管理</h2>
+<p>pm2 启动服务</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">pm2 start app.js
+</code></pre></div><p>pm2 常用命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 显示PM2启动的所有的应用程序列表</span>
+pm2 list
+
+<span class="c1"># 停止app应用进程</span>
+pm2 stop APP_NAME
+pm2 stop all <span class="c1"># 停止所有，也可以指定id。 下同</span>
+
+<span class="c1"># 重启应用</span>
+pm2 restart APP_NAME
+
+<span class="c1"># 删除应用</span>
+pm2 delete APP_NAME
+
+<span class="c1"># 显示每个应用程序的CPU和内存占用情况</span>
+pm2 monit
+
+<span class="c1"># 显示应用的所有信息</span>
+pm2 show APP_NAME
+</code></pre></div><h2 id="nginx配置">nginx配置</h2>
+<p>上述配置完成，可以进行IP:PORT 进行访问，但还是无法使用域名，所以下面进行nginx反向代理配置。
+进入nginx配置路径，并在conf.d添加自己的配置</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /etc/nginx/conf.d
+</code></pre></div><p>配置基本相同，在前缀加上node监听端口</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># *.conf
+
+upstream nodejs {
+  server 127.0.0.1:2000; # 反向监听2000端口
+  keepalive 64;
+}
+</code></pre></div><p>同一个域名域名下监听其他端口</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># *.conf
+# 例：you_domain/demo  监听服务器3000端口
+
+location /demo/ {
+    proxy_pass http://127.0.0.1:3000/;
+}
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/nginx/">Nginx</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/node.js/">node.js</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/pm2/">pm2</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

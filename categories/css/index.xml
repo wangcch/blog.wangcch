@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on 那那那呀</title>
+    <link>https://blog.wangcch.cc/categories/css/</link>
+    <description>Recent content in CSS on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/categories/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Checkbox自定义menu button</title>
+      <link>https://blog.wangcch.cc/posts/css_menu_icon/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/css_menu_icon/</guid>
+      <description>使用 input&amp;gt;checkbox 实现菜单按钮 前言 记得以前写的这种类似开关都是由点击事件驱动样式（监听点击事件-&amp;gt;动态添加样式）。现在看来有点麻烦，不能确定唯一性，单一值驱动相关事件。 自上次总结了 自定义 radio 单选 checkbo</description>
+    </item>
+    
+    <item>
+      <title>自定义 input&gt;radio 单选</title>
+      <link>https://blog.wangcch.cc/posts/custom_radio/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/custom_radio/</guid>
+      <description>自定义radio/checkbox 单选/多选样式，原理都是一样的 &amp;lt;input type=&amp;#34;radio&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; /&amp;gt; 前言 是在写个react练手项目react-todo中选择状态（all、active、completed）的选中表示。开始也是</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（四）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start4/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start4/</guid>
+      <description>插值#{} 运算 控制指令 插值# @mixinset-value($side, $value) { margin-#{$side}: $value; } .demo { @includeset-value(top, 15px); } 编译 .demo { margin-top: 15px; } 用处无限大，等待你发掘。 运算 加法 $box-width: 100px; $item-width: 50px; .demo { width: $box-width - $item-width; } .demo { width: 50px; } 不同的单位类型相加会报错 减法 -同理 乘法 *同理 除法 /同理 控制指令 @if 根据条件</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（三）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start3/</link>
+      <pubDate>Wed, 31 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start3/</guid>
+      <description>混合宏 扩展/继承 [占位符](#占位符 %placeholder) 混合宏 当相同的类型变得越来越多，简单的变量已经达不到我们的要求，这时我们就需要混合宏来帮我们完成。 声明混合宏 1. 不带参数混合宏 @mixinborder-radius { -webkit-border-radius: 5px; border-radius: 5px; } @mixin用于声明混合</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（二）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start2/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start2/</guid>
+      <description>不同样式风格嵌套方式 普通变量与默认变量 局部变量与全局变量 嵌套 不同样式风格嵌套方式 嵌套输出方式 nested 展开输出方式 expanded 紧凑输出方式 compact 压缩输出方式 compressed 嵌套输出方式 nested 编译时，添加 &amp;ndash;style nested 参数 sass --watch demo.scss:demo.css --style nested nav { li { display: inline-block; } a { text-decoration:</description>
+    </item>
+    
+    <item>
+      <title>sass 入门（一）</title>
+      <link>https://blog.wangcch.cc/posts/sass_start1/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/sass_start1/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sass 是一门高于 CSS的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
+&lt;a href=&#34;http://sass-lang.com&#34;&gt;来自官网sass-lang.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS 清除float浮动</title>
+      <link>https://blog.wangcch.cc/posts/clear_float/</link>
+      <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/clear_float/</guid>
+      <description>&lt;p&gt;使用浮动的情况有很多，比如页面布局(&lt;code&gt;float:left&lt;/code&gt; &lt;code&gt;float:right&lt;/code&gt;)、取消块元素的独占一行等等。浮动对页面的主要影响是，当父盒子没有设置高，子盒子在父盒子中进行浮动。由于父盒子的高度为0，下面的元素会自动补位。这时候需要清除浮动影响。还有一点是今天遇到的所以准备整理一下，就是有些响应式界面并不是清除浮动，而是对浮动的去除。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS 几种垂直居中分享</title>
+      <link>https://blog.wangcch.cc/posts/vertical_center/</link>
+      <pubDate>Sun, 04 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/vertical_center/</guid>
+      <description>&lt;p&gt;分享几种自己积累的垂直居中方法，感觉目前实现垂直居中的一种是绝对定位，物理位移来实现。另一种是通过特定布局属性来实现，如文中提到的flex弹性布局和table表格布局实现。
+（努力后续持续更新&amp;hellip;）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS visibility与display可见性区别</title>
+      <link>https://blog.wangcch.cc/posts/visibility_display/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/visibility_display/</guid>
+      <description>&lt;p&gt;主要区别：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;visibility:hidden//设置的不可见的元素任然会占据页面空间。	
+ display:none	 //因display属性主要是框类型，none 隐藏元素则不会占据原有空间
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
