@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>JS深浅拷贝 ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="一个老生常谈的问题，也是  挤压很久的文章。也是  我业务代码赋值传递过程进场遇到的问题。其实之前没有深浅拷贝的概念。只是是与空的对象/数组合并生成新的对象/数组，或者是正反序列化，避免指向原数组/对象。后来查看InterviewMap 才知道深浅拷贝概念。所以简单  记录保存一下吧&amp;hellip;
+" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/deep_and_shallow_copy/'>JS深浅拷贝</a></h2>
+                        <span class="date">2018.07.17</span>
+                    </div>
+                    <div class="post_content markdown"><p>一个老生常谈的问题，也是  挤压很久的文章。也是  我业务代码赋值传递过程进场遇到的问题。其实之前没有深浅拷贝的概念。只是是与空的对象/数组合并生成新的对象/数组，或者是正反序列化，避免指向原数组/对象。后来查看<a href="https://yuchengkai.cn/docs/">InterviewMap</a> 才知道深浅拷贝概念。所以简单  记录保存一下吧&hellip;</p>
+<h2 id="-前言"> 前言</h2>
+<p>一个赋值问题：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nx">obj1</span><span class="p">;</span>
+<span class="nx">obj2</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">// 2 obj1的值也改变了
+</span></code></pre></div><p>是的，对象/数组的简单复制，并不是对象/数组本身， 而是指向改对象的指针。 所以两个  变量（obj1、obj2）指向的是同一个对象。</p>
+<p>怎么解决呢？深浅拷贝，其实原理感觉都是为了生成新的对象/数组</p>
+<h2 id="-浅拷贝"> 浅拷贝</h2>
+<h3 id="循环遍历赋值">循环遍历赋值</h3>
+<p> 我们知道，复制一个基本类型的值时，会创建一个新值，并把它保存在新的变量的位置上。简单来说就是一个一个复制对象/数组中的单一值。 基本上下面的也是相同的原理。</p>
+<h3 id="-扩展运算符"> 扩展运算符</h3>
+<p>将一个对象/数组转为用逗号分隔的参数序列。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">obj1</span> <span class="p">};</span>
+<span class="nx">obj2</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">// 1
+</span></code></pre></div><h3 id="objectassigntarget-sources">Object.assign(target, &hellip;sources)</h3>
+<p> 当然 js 标准  库中也提供了一些方法。<!-- raw HTML omitted -->Object.assign()<!-- raw HTML omitted --> 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">obj1</span><span class="p">);</span>
+<span class="nx">obj2</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">// 1
+</span></code></pre></div><h3 id="arrayslice">Array.slice()</h3>
+<p><!-- raw HTML omitted -->slice()<!-- raw HTML omitted --> 方法返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。且原始数组不会被修改。</p>
+<h2 id="深拷贝">深拷贝</h2>
+<h3 id="正反序列化">正反序列化</h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">));</span>
+</code></pre></div><p>局限性：</p>
+<ul>
+<li>忽略 undefined</li>
+<li>不能序列化函数</li>
+<li>不能深拷贝内对象</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">a</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="nx">b</span><span class="o">:</span> <span class="mi">2</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj1</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">a</span> <span class="o">===</span> <span class="nx">obj2</span><span class="p">.</span><span class="nx">a</span><span class="p">)</span>          <span class="c1">// false
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">b</span> <span class="o">===</span> <span class="nx">obj2</span><span class="p">.</span><span class="nx">b</span><span class="p">)</span>          <span class="c1">// false
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">age</span> <span class="o">===</span> <span class="nx">obj2</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span>  <span class="c1">// true
+</span></code></pre></div><h3 id="循环遍历赋值--递归">循环遍历赋值 + 递归</h3>
+<p>与上述方法相同，多了对内对象的再次循环赋值处理。当然你可以封装一个方法递归处理。</p>
+<blockquote>
+<p>如果你想深复制一个对象（那就是沿着原形链，对所有属性进行递归复制），你必须要用另外一种方法。以下是一个可行的例子。<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm">结构化克隆算法-深复制</a></p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">clone</span><span class="p">(</span><span class="nx">objectToBeCloned</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Basis.
+</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">objectToBeCloned</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">objectToBeCloned</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">objectClone</span><span class="p">;</span>
+  
+  <span class="c1">// Filter out special objects.
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">Constructor</span> <span class="o">=</span> <span class="nx">objectToBeCloned</span><span class="p">.</span><span class="nx">constructor</span><span class="p">;</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">Constructor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Implement other special objects here.
+</span><span class="c1"></span>    <span class="k">case</span> <span class="nb">RegExp</span><span class="o">:</span>
+      <span class="nx">objectClone</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Constructor</span><span class="p">(</span><span class="nx">objectToBeCloned</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nb">Date</span><span class="o">:</span>
+      <span class="nx">objectClone</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Constructor</span><span class="p">(</span><span class="nx">objectToBeCloned</span><span class="p">.</span><span class="nx">getTime</span><span class="p">());</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="nx">objectClone</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Constructor</span><span class="p">();</span>
+  <span class="p">}</span>
+  
+  <span class="c1">// Clone each property.
+</span><span class="c1"></span>  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">objectToBeCloned</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">objectClone</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nx">clone</span><span class="p">(</span><span class="nx">objectToBeCloned</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="nx">objectClone</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="其他工具库">其他工具库</h3>
+<ol>
+<li>loadash: <a href="https://lodash.com/docs/4.17.10#cloneDeep">loadash 的深拷贝函数</a></li>
+<li>尤大封装的循环使用JSON.stringify和JSON.parse：<a href="https://github.com/yyx990803/circular-json-es6">circular-json-es6</a></li>
+</ol>
+<blockquote>
+<p> 参考
+<a href="https://yuchengkai.cn/docs/zh/frontend/#%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D">深浅拷贝</a>
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm">结构化克隆算法</a></p>
+</blockquote></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/note/">note</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/dom/">DOM</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

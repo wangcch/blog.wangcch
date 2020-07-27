@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" >
 <head>
-	<meta name="generator" content="Hugo 0.74.2" />
+	<meta name="generator" content="Hugo 0.74.3" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,16 +93,12 @@
 
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='/posts/sass_start1/'>sass 入门（一）</a></h2>
+        <h2><a href='/posts/vue-cli_api_proxy/'>vue-cli API代理</a></h2>
     </div>
     
     <div class="list">
         <div class="post_content markdown">
-            <p><h2 id="简介">简介</h2>
-<blockquote>
-<p>Sass 是一门高于 CSS的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
-<a href="http://sass-lang.com">来自官网sass-lang.com</a></p>
-</blockquote>......</p>
+            <p>使用proxyTable进行跨域API代理 // config/index.js module.exports = { dev: { proxyTable: { // 将所有以 /api 开头的请求通过 jsonplaceholder 代理 &#39;/api&#39;: { target: &#39;https://wangcch.cc&#39;, changeOrigin: true, pathRewrite: { &#39;^/api&#39;: &#39;&#39; } } } } } 调用 this.$http.get(&#39;/api/demo&#39;).then(function(res){ console.log(res.data); }) 依赖 npm install vue-resource......</p>
         </div>
     </div>
     
@@ -111,7 +107,102 @@
             <div class="info">
                 <span class="field">
                     <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2018.01.18</span>
+                    <span class="date">2018.02.26</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/vue/">Vue</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/vs-code_command/'>添加VS Code命令行</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>习惯用atom的都知道，可以在文件目录中启动atom，非常方便。使用vs却发现没有。网上搜索配置.bash_profile，然而我没有这个文件，手动添加后可以使用，但是终端重启后又回失效。 最后在官网找......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.02.25</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/vs-code/">vs code</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/vim_command/'>vim 基本命令，常用命令</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>基础命令 vim #命令行中进入vim编辑器 Esc #退出i(插入模式)，取消操纵 :! command #暂时离开vi到指令模式下执行command命令，如：!ls 执行ls命令 :sh #进入shell命令行,执行完命令后ctrl+d退出重......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.02.12</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/vim/">vim</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/sass_start4/'>sass 入门（四）</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>插值#{} 运算 控制指令 插值# @mixinset-value($side, $value) { margin-#{$side}: $value; } .demo { @includeset-value(top, 15px); } 编译 .demo { margin-top: 15px; } 用处无限大，等待你发掘。 运算 加法 $box-width: 100px; $item-width: 50px; .demo { width: $box-width - $item-width; } .demo { width: 50px; } 不同的单位类型相加会报错 减法 -同理 乘法 *同理 除法 /同理 控制指令 @if 根据条件......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.02.04</span>
                 </span>
                 
                 <span class="field tags">
@@ -130,14 +221,12 @@
 
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='/posts/http_status_code/'>HTTP 状态码</a></h2>
+        <h2><a href='/posts/angular_reference_manual/'>Angular 参考手册</a></h2>
     </div>
     
     <div class="list">
         <div class="post_content markdown">
-            <p><p>HTTP状态码（英语：HTTP Status Code）是用以表示网页服务器超文本传输协议响应状态的3位数字代码。它由 RFC 2616 规范定义的，并得到 RFC 2518、RFC 2817、RFC 2295、RFC 2774 与 RFC 4918 等规范扩展。所有状态码的第一个数字代表了响应的五种状态之一。所示的消息短语是典型的，但是可以提供任何可读取的替代方案。 除非另有说明，状态码是HTTP / 1.1标准（RFC 7231）的一部分。</p>
-<p>HTTP状态码的官方注册表由互联网号码分配局（Internet Assigned Numbers Authority）维护。</p>
-<p>微软互联网信息服务 （Microsoft Internet Information Services）有时会使用额外的十进制子代码来获取更多具体信息，但是这些子代码仅出现在响应有效内容和文档中，而不是代替实际的HTTP状态代码</p>......</p>
+            <p>Angular 指令 Angular 事件 Angular 全局API Angular指令 指令 描述 ng-app 定义应用程序的根元素。 ng-bind 绑定 HTML 元素到应用程序数据 ng-bind-html 绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML 字符串中危险字符 ng-bind-template 规定要使用模板替换的文本内容 ng-blur 规定 blur 事件的......</p>
         </div>
     </div>
     
@@ -146,160 +235,15 @@
             <div class="info">
                 <span class="field">
                     <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.11.16</span>
+                    <span class="date">2018.02.02</span>
                 </span>
                 
                 <span class="field tags">
                     <i class="ri-stack-line"></i>
                     
-                    <a href="https://blog.wangcch.cc/tags/network/">network</a>
+                    <a href="https://blog.wangcch.cc/tags/angular/">Angular</a>
                     
-                    <a href="https://blog.wangcch.cc/tags/http/">HTTP</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/npm_command/'>npm 常用命令</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p><p>npm 常用命令</p>......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.11.14</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/npm/">npm</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/get_put_post_delete/'>get put post delete 区别</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>查看</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>更新与创建</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>创建</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>删除</td>
-</tr>
-</tbody>
-</table>......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.11.10</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/network/">network</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/vue_ui/'>Vue 常用UI组件</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Muse-UI</td>
-<td>Mint UI</td>
-<td>iview</td>
-<td>vue-mui</td>
-<td>radon-ui</td>
-<td>antd vue</td>
-<td>weex</td>
-<td>element</td>
-<td>N3</td>
-</tr>
-</tbody>
-</table>......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.10.16</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/vue/">Vue</a>
+                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
                     
                 </span>
                 

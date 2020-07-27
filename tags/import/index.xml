@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>import on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/import/</link>
+    <description>Recent content in import on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 31 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/import/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>require/exports | import/export</title>
+      <link>https://blog.wangcch.cc/posts/require_or_import/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/require_or_import/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;规范不同；&lt;/li&gt;
+&lt;li&gt;时代不同；&lt;/li&gt;
+&lt;li&gt;形式不同；
+&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

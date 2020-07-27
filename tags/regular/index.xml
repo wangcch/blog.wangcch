@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>regular on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/regular/</link>
+    <description>Recent content in regular on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 27 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/regular/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>啃个正则骨头--Url解析</title>
+      <link>https://blog.wangcch.cc/posts/regular_url/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/regular_url/</guid>
+      <description>正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript 中，正则表达式也是对象。这些模式被用于 RegExp 的 exec 和 test 方法, 以及 String 的 match、replace、search 和 split 方法。 前言  正则这种东西是一个让我头疼的东西，</description>
+    </item>
+    
+  </channel>
+</rss>

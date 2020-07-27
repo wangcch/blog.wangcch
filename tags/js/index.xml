@@ -6,10 +6,51 @@
     <description>Recent content in js on 那那那呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.wangcch.cc/tags/js/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>看看 JaveScript ES2019</title>
+      <link>https://blog.wangcch.cc/posts/new_es10/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/new_es10/</guid>
+      <description>&lt;p&gt;一起看看在 ES2019 中带来的新特性。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>require/exports | import/export</title>
+      <link>https://blog.wangcch.cc/posts/require_or_import/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/require_or_import/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;规范不同；&lt;/li&gt;
+&lt;li&gt;时代不同；&lt;/li&gt;
+&lt;li&gt;形式不同；
+&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>let反思--块作用域</title>
+      <link>https://blog.wangcch.cc/posts/let_var/</link>
+      <pubDate>Tue, 25 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/let_var/</guid>
+      <description>&lt;p&gt;由 let 块作用域，反思自己的无知&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS深浅拷贝</title>
+      <link>https://blog.wangcch.cc/posts/deep_and_shallow_copy/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/deep_and_shallow_copy/</guid>
+      <description>&lt;p&gt;一个老生常谈的问题，也是  挤压很久的文章。也是  我业务代码赋值传递过程进场遇到的问题。其实之前没有深浅拷贝的概念。只是是与空的对象/数组合并生成新的对象/数组，或者是正反序列化，避免指向原数组/对象。后来查看&lt;a href=&#34;https://yuchengkai.cn/docs/&#34;&gt;InterviewMap&lt;/a&gt; 才知道深浅拷贝概念。所以简单  记录保存一下吧&amp;hellip;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Nuxt element-ui</title>

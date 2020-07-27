@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DOM on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/dom/</link>
+    <description>Recent content in DOM on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/dom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JS深浅拷贝</title>
+      <link>https://blog.wangcch.cc/posts/deep_and_shallow_copy/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/deep_and_shallow_copy/</guid>
+      <description>&lt;p&gt;一个老生常谈的问题，也是  挤压很久的文章。也是  我业务代码赋值传递过程进场遇到的问题。其实之前没有深浅拷贝的概念。只是是与空的对象/数组合并生成新的对象/数组，或者是正反序列化，避免指向原数组/对象。后来查看&lt;a href=&#34;https://yuchengkai.cn/docs/&#34;&gt;InterviewMap&lt;/a&gt; 才知道深浅拷贝概念。所以简单  记录保存一下吧&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,199 @@
     <description>Recent content in Tags on 那那那呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.wangcch.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>es10</title>
+      <link>https://blog.wangcch.cc/tags/es10/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/es10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>es2019</title>
+      <link>https://blog.wangcch.cc/tags/es2019/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/es2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://blog.wangcch.cc/tags/js/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>export</title>
+      <link>https://blog.wangcch.cc/tags/export/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/export/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>import</title>
+      <link>https://blog.wangcch.cc/tags/import/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/import/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>require</title>
+      <link>https://blog.wangcch.cc/tags/require/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/require/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>https://blog.wangcch.cc/tags/node/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>https://blog.wangcch.cc/tags/npm/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nvm</title>
+      <link>https://blog.wangcch.cc/tags/nvm/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/nvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>let</title>
+      <link>https://blog.wangcch.cc/tags/let/</link>
+      <pubDate>Tue, 25 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/let/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>var</title>
+      <link>https://blog.wangcch.cc/tags/var/</link>
+      <pubDate>Tue, 25 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/var/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>note</title>
+      <link>https://blog.wangcch.cc/tags/note/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regular</title>
+      <link>https://blog.wangcch.cc/tags/regular/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/regular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prop</title>
+      <link>https://blog.wangcch.cc/tags/prop/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/prop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://blog.wangcch.cc/tags/react/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>state</title>
+      <link>https://blog.wangcch.cc/tags/state/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/state/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DOM</title>
+      <link>https://blog.wangcch.cc/tags/dom/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/dom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cookie</title>
+      <link>https://blog.wangcch.cc/tags/cookie/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/cookie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>localStorage</title>
+      <link>https://blog.wangcch.cc/tags/localstorage/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/localstorage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sessionStorage</title>
+      <link>https://blog.wangcch.cc/tags/sessionstorage/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/sessionstorage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web storage</title>
+      <link>https://blog.wangcch.cc/tags/web-storage/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/tags/web-storage/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>checkbox</title>
@@ -98,15 +287,6 @@
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.wangcch.cc/tags/element/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>js</title>
-      <link>https://blog.wangcch.cc/tags/js/</link>
-      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.wangcch.cc/tags/js/</guid>
       <description></description>
     </item>
     
@@ -242,15 +422,6 @@
       <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.wangcch.cc/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>npm</title>
-      <link>https://blog.wangcch.cc/tags/npm/</link>
-      <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.wangcch.cc/tags/npm/</guid>
       <description></description>
     </item>
     

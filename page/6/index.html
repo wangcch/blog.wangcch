@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" >
 <head>
-	<meta name="generator" content="Hugo 0.74.2" />
+	<meta name="generator" content="Hugo 0.74.3" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,12 +93,12 @@
 
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='/posts/clear_float/'>CSS 清除float浮动</a></h2>
+        <h2><a href='/posts/sass_start3/'>sass 入门（三）</a></h2>
     </div>
     
     <div class="list">
         <div class="post_content markdown">
-            <p><p>使用浮动的情况有很多，比如页面布局(<code>float:left</code> <code>float:right</code>)、取消块元素的独占一行等等。浮动对页面的主要影响是，当父盒子没有设置高，子盒子在父盒子中进行浮动。由于父盒子的高度为0，下面的元素会自动补位。这时候需要清除浮动影响。还有一点是今天遇到的所以准备整理一下，就是有些响应式界面并不是清除浮动，而是对浮动的去除。</p>......</p>
+            <p>混合宏 扩展/继承 [占位符](#占位符 %placeholder) 混合宏 当相同的类型变得越来越多，简单的变量已经达不到我们的要求，这时我们就需要混合宏来帮我们完成。 声明混合宏 1. 不带参数混合宏 @mixinborder-radius { -webkit-border-radius: 5px; border-radius: 5px; } @mixin用于声明混合......</p>
         </div>
     </div>
     
@@ -107,13 +107,15 @@
             <div class="info">
                 <span class="field">
                     <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.06.12</span>
+                    <span class="date">2018.01.31</span>
                 </span>
                 
                 <span class="field tags">
                     <i class="ri-stack-line"></i>
                     
                     <a href="https://blog.wangcch.cc/tags/css/">CSS</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/sass/">sass</a>
                     
                 </span>
                 
@@ -124,12 +126,12 @@
 
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='/posts/http_tcp/'>HTTP与TCP的区别</a></h2>
+        <h2><a href='/posts/js_settimeout_hole/'>js 循环延时踩坑</a></h2>
     </div>
     
     <div class="list">
         <div class="post_content markdown">
-            <p><p>TCP是传输层，http是应用层。http是要基于TCP连接基础上的，TCP就是单纯建立连接，不涉及任何我们需要请求的实际数据，简单的传输。http是用来收发数据，即实际应用。</p>......</p>
+            <p>为什么遇到循环延时操作了。一切源于在小程序开发过程中循环生成多个二维码事件，二维码画图太慢，在读取canvas画图地址时，不给一定盾延时是无法读取到图片地址的。再加上小程序不支持多线程。画图需要一定的......</p>
         </div>
     </div>
     
@@ -138,7 +140,110 @@
             <div class="info">
                 <span class="field">
                     <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.06.07</span>
+                    <span class="date">2018.01.24</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/sass_start2/'>sass 入门（二）</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>不同样式风格嵌套方式 普通变量与默认变量 局部变量与全局变量 嵌套 不同样式风格嵌套方式 嵌套输出方式 nested 展开输出方式 expanded 紧凑输出方式 compact 压缩输出方式 compressed 嵌套输出方式 nested 编译时，添加 &ndash;style nested 参数 sass --watch demo.scss:demo.css --style nested nav { li { display: inline-block; } a { text-decoration:......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.01.20</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/css/">CSS</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/sass/">sass</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/sass_start1/'>sass 入门（一）</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p><h2 id="简介">简介</h2>
+<blockquote>
+<p>Sass 是一门高于 CSS的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
+<a href="http://sass-lang.com">来自官网sass-lang.com</a></p>
+</blockquote>......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.01.18</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/css/">CSS</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/sass/">sass</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/http_status_code/'>HTTP 状态码</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p><p>HTTP状态码（英语：HTTP Status Code）是用以表示网页服务器超文本传输协议响应状态的3位数字代码。它由 RFC 2616 规范定义的，并得到 RFC 2518、RFC 2817、RFC 2295、RFC 2774 与 RFC 4918 等规范扩展。所有状态码的第一个数字代表了响应的五种状态之一。所示的消息短语是典型的，但是可以提供任何可读取的替代方案。 除非另有说明，状态码是HTTP / 1.1标准（RFC 7231）的一部分。</p>
+<p>HTTP状态码的官方注册表由互联网号码分配局（Internet Assigned Numbers Authority）维护。</p>
+<p>微软互联网信息服务 （Microsoft Internet Information Services）有时会使用额外的十进制子代码来获取更多具体信息，但是这些子代码仅出现在响应有效内容和文档中，而不是代替实际的HTTP状态代码</p>......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2017.11.16</span>
                 </span>
                 
                 <span class="field tags">
@@ -155,112 +260,6 @@
     </div>
 </div>
 
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/viewport/'>HTML 移动前端viewport</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p><p>在开发响应式网站时<a href="'http://cv.theyear.space'">Wangcch&rsquo;s CV</a>，并未在移动窗口进行测试。结果在服务器部署测试时手机并没有自适应窗口，只是显示网页缩放版本。后来查资料，一行代码解决&hellip;</p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
- initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&quot;/&gt; 
-</code></pre>......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.06.05</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/html/">HTML</a>
-                    
-                    <a href="https://blog.wangcch.cc/tags/viewport/">viewport</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/vertical_center/'>CSS 几种垂直居中分享</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p><p>分享几种自己积累的垂直居中方法，感觉目前实现垂直居中的一种是绝对定位，物理位移来实现。另一种是通过特定布局属性来实现，如文中提到的flex弹性布局和table表格布局实现。
-（努力后续持续更新&hellip;）</p>......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.06.04</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/css/">CSS</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/visibility_display/'>CSS visibility与display可见性区别</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p><p>主要区别：<!-- raw HTML omitted --></p>
-<pre><code>visibility:hidden//设置的不可见的元素任然会占据页面空间。	
- display:none	 //因display属性主要是框类型，none 隐藏元素则不会占据原有空间
-</code></pre>......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2017.06.02</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/css/">CSS</a>
-                    
-                    <a href="https://blog.wangcch.cc/tags/visibility/">visibility</a>
-                    
-                    <a href="https://blog.wangcch.cc/tags/display/">display</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="pagination">
     
@@ -269,6 +268,10 @@
         返回上一页
     </a>
     
+    
+    <a href="/page/7/" class="next">
+        阅读更多文章
+    </a>
     
     
 </div>

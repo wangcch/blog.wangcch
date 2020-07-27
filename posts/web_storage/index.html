@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>sessionStorage,localStorage与Cookie ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content=" Web Storage API (sessionStorage,localStorage) 提供机制， 使浏览器能以一种比使用 Cookie 更直观的方式存储键/值对。
+" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/web_storage/'>sessionStorage,localStorage与Cookie</a></h2>
+                        <span class="date">2018.07.07</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>Web Storage API (sessionStorage,localStorage) 提供机制， 使浏览器能以一种比使用 Cookie 更直观的方式存储键/值对。</p>
+</blockquote>
+<h2 id="前言">前言</h2>
+<p>我简单理解就是数据的本地存储，个人运用也是登录状态和个人信息等存储, 保证页面刷新与路由变化都不会丢失与初始化。 但三者具体的区别是什么？会在本文赘述。当然也是方便自己以后查看，毕竟健忘&hellip;</p>
+<h2 id="基本概念">基本概念</h2>
+<h3 id="cookie">Cookie</h3>
+<p>Cookie 是服务器保存在浏览器的一小段文本信息，一般大小不能超过 4KB。通常保存登录状态 （会话状态管理）、个性化设置、浏览器行为跟踪等。</p>
+<h3 id="sessionstorage">sessionStorage</h3>
+<p>&ldquo;session&quot;会话，可以为前端的浏览器会话机制. 比使用 Cookie 更直观的方式存储键/值对呈现。可以存储数据信息，刷新、重新加载与恢复页面数据仍然存在，但当页面关闭或浏览器关闭，数据将会被清空。</p>
+<h3 id="localstorage">localStorage</h3>
+<p>与 sessionStorage 基本相同，同样的功能，较大的区别就是<strong>浏览器关闭，重新打开后数据仍然存在</strong>。与 Cookie 一样支持同源窗口数据共享。</p>
+<h2 id="异同">异同</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Cookie</th>
+<th>Web Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据周期</td>
+<td>一般由服务器生成，时效期</td>
+<td><strong>sessionStorage</strong>: 当前会话有效，关闭页面/浏览器清除;<strong>localStorage</strong>:浏览器永久保存，可清除</td>
+</tr>
+<tr>
+<td>数据大小</td>
+<td>4K左右</td>
+<td>一般5M,甚至更大</td>
+</tr>
+<tr>
+<td>使用</td>
+<td>前端开发者需要自己封装setCookie，getCookie</td>
+<td>浏览器提供API，拥有setItem,getItem,removeItem,clear等方法</td>
+</tr>
+<tr>
+<td>访问</td>
+<td>服务器 + 客户端</td>
+<td>浏览器 （服务器不能直接访问）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="使用">使用</h2>
+<h3 id="cookie-1">Cookie</h3>
+<p>当服务器收到HTTP请求时，服务器可以在响应头里面添加一个Set-Cookie选项。浏览器收到响应后通常会保存下Cookie，之后对该服务器每一次请求中都通过Cookie请求头部将Cookie信息发送给服务器。另外，Cookie的过期时间、域、路径、有效期、适用站点都可以根据需要来指定。<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Cookies#%E5%88%9B%E5%BB%BACookie">MORE</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Set-Cookie: &lt;cookie名&gt;=&lt;cookie值&gt;
+</code></pre></div><h3 id="web-storage">Web Storage</h3>
+<p>like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+</code></pre></div><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API">MORE</a></p>
+<h2 id="安全">安全</h2>
+<p>详细文档可参考一下MDN文档。但总的来说都不安全，Cookie注意使用HTTPS，还有就是不管什么存储信息都不要存储敏感信息数据。</p>
+<blockquote>
+<p>参考：
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Cookies">HTTP cookies</a>
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API">Web Storage API</a></p>
+</blockquote></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/sessionstorage/">sessionStorage</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/localstorage/">localStorage</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/cookie/">Cookie</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/web-storage/">web storage</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

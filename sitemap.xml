@@ -4,7 +4,192 @@
   
   <url>
     <loc>https://blog.wangcch.cc/categories/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/es10/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/es2019/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/js/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/categories/js/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/new_es10/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/export/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/import/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/require/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/require_or_import/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/node/</loc>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/npm/</loc>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/categories/npm/</loc>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/nvm/</loc>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/use-nvm/</loc>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/let/</loc>
+    <lastmod>2018-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/let_var/</loc>
+    <lastmod>2018-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/var/</loc>
+    <lastmod>2018-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/note/</loc>
+    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/categories/other/</loc>
+    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/regular/</loc>
+    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/regular_url/</loc>
+    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/prop/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/react/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/categories/react/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/react_prop_state/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/state/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/dom/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/deep_and_shallow_copy/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/cookie/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/localstorage/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/categories/network/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/sessionstorage/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/posts/web_storage/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.wangcch.cc/tags/web-storage/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,21 +209,6 @@
   
   <url>
     <loc>https://blog.wangcch.cc/categories/css/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wangcch.cc/posts/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wangcch.cc/tags/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wangcch.cc/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,11 +268,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wangcch.cc/categories/js/</loc>
-    <lastmod>2018-04-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.wangcch.cc/tags/node.js/</loc>
     <lastmod>2018-04-24T00:00:00+00:00</lastmod>
   </url>
@@ -119,11 +284,6 @@
   
   <url>
     <loc>https://blog.wangcch.cc/tags/element/</loc>
-    <lastmod>2018-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wangcch.cc/tags/js/</loc>
     <lastmod>2018-04-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -228,11 +388,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wangcch.cc/categories/other/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.wangcch.cc/tags/vs-code/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url>
@@ -310,21 +465,6 @@
   <url>
     <loc>https://blog.wangcch.cc/tags/network/</loc>
     <lastmod>2017-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wangcch.cc/categories/network/</loc>
-    <lastmod>2017-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wangcch.cc/tags/npm/</loc>
-    <lastmod>2017-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wangcch.cc/categories/npm/</loc>
-    <lastmod>2017-11-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>

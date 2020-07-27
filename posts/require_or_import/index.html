@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>require/exports | import/export ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content=" 规范不同； 时代不同； 形式不同； &amp;hellip; " />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/require_or_import/'>require/exports | import/export</a></h2>
+                        <span class="date">2019.01.31</span>
+                    </div>
+                    <div class="post_content markdown"><ol>
+<li>规范不同；</li>
+<li>时代不同；</li>
+<li>形式不同；
+&hellip;</li>
+</ol>
+<p>年末不算很忙，还是把拖了 N 月的 todo 整理了吧&hellip;总不能带到过年呀。O_O</p>
+<h2 id="前言">前言</h2>
+<p>自我感觉，require/import 本身也是两个时代的产物，自我认知的区别性，规范不同，表达形式不同，出现时代不同，运行时期不同等。（以下 require 主要以 CommonJS 规范为例）</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// require
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">qs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;qs&#34;</span><span class="p">);</span>
+<span class="c1">// import
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">Qs</span> <span class="nx">from</span> <span class="s2">&#34;qs&#34;</span><span class="p">;</span>
+</code></pre></div><h2 id="规范不同">规范不同</h2>
+<p>require/exports 并非官方规范，而是来之 CommonJS，（社区产物，当然除了 CommonJS(node) 还有 AMD(requirejs)、CMD(seajs) 等规范，CommonJS 作为 Nodejs 的规范，一直沿用至今）。
+import/export 则是来之官方，遵循 ECMAScript 规范，由 ES6 开始引入。</p>
+<h2 id="时代不同">时代不同</h2>
+<p>在 ES6 之前，JavaScript 不支持类（class），所以也没有模块（module）。但是社区是伟大的，出现了如 CommonJS 等第三方社区规范，Nodejs 的出现也标志着“JS 模块化编程”的诞生。</p>
+<p>ES6 标准发布后，module 成为标准，标准使用是以 export 指令导出接口，以 import 引入模块，但是在 node 模块中，依然采用的是 CommonJS 规范，使用 require 引入模块，使用 module.exports 导出接口。</p>
+<h2 id="形式不同">形式不同</h2>
+<h3 id="require">require</h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// a.js
+</span><span class="c1"></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="s2">&#34;data&#34;</span><span class="p">,</span>
+  <span class="nx">func</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">};</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// b.js
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;./a&#34;</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="c1">// data
+</span><span class="c1"></span><span class="nx">a</span><span class="p">.</span><span class="nx">func</span><span class="p">();</span>
+</code></pre></div><h3 id="import">import</h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// a.js
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kr">const</span> <span class="nx">func</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
+<span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="s2">&#34;data&#34;</span><span class="p">;</span>
+<span class="kr">export</span> <span class="nx">value</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// b.js
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">A</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;./a&#34;</span><span class="p">;</span>
+</code></pre></div><p>当然还有<!-- raw HTML omitted -->*<!-- raw HTML omitted --> <!-- raw HTML omitted -->as<!-- raw HTML omitted -->等，更多用法可见-&gt;<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import">import-MDN</a></p>
+<h2 id="本质差别">本质差别</h2>
+<p>将 import/export 使用 babel 转成 es5 可以看到明显差别：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// es6
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">Demo</span> <span class="nx">from</span> <span class="s2">&#34;./demo&#34;</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// es5
+</span><span class="c1"></span>
+<span class="s2">&#34;use strict&#34;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">_demo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;./demo&#34;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">_demo2</span> <span class="o">=</span> <span class="nx">_interopRequireDefault</span><span class="p">(</span><span class="nx">_demo</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">_interopRequireDefault</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">obj</span> <span class="o">&amp;&amp;</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">__esModule</span> <span class="o">?</span> <span class="nx">obj</span> <span class="o">:</span> <span class="p">{</span> <span class="k">default</span><span class="o">:</span> <span class="nx">obj</span> <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div><p>当然以上差异产生的原因是因为要实现 import/export 的<!-- raw HTML omitted -->export default<!-- raw HTML omitted -->。如果只是引用一个模块方法好像形式上也没什么区别：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// es6
+</span><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">demo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;./demo&#34;</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// es5
+</span><span class="c1"></span><span class="s2">&#34;use strict&#34;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">_demo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;./demo&#34;</span><span class="p">);</span>
+</code></pre></div><p>我能感觉到的区别是，import是编译时加载，require是运行时加载。所以import只能在头部，而require相对宽松，甚至可以所为表达式使用。</p>
+<blockquote>
+<ol>
+<li>CommonJS 还是 ES6 Module 输出都可以看成是一个具备多个属性或者方法的对象；</li>
+<li>default 是 ES6 Module 所独有的关键字，export default fs 输出默认的接口对象，import fs from &lsquo;fs&rsquo; 可直接导入这个对象；</li>
+<li>ES6 Module 中导入模块的属性或者方法是强绑定的，包括基础类型；而 CommonJS 则是普通的值传递或者引用传递。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>参考：
+<a href="https://www.zhihu.com/question/56820346/answer/150724784">require，import 区别？ - 寸志的回答 - 知乎</a></p>
+</blockquote></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/require/">require</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/import/">import</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/export/">export</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

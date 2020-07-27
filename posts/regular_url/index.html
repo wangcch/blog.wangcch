@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>啃个正则骨头--Url解析 ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript 中，正则表达式也是对象。这些模式被用于 RegExp 的 exec 和 test 方法, 以及 String 的 match、replace、search 和 split 方法。 前言  正则这种东西是一个让我头疼的东西，" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/regular_url/'>啃个正则骨头--Url解析</a></h2>
+                        <span class="date">2018.08.27</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript 中，正则表达式也是对象。这些模式被用于 RegExp 的 exec 和 test 方法, 以及 String 的 match、replace、search 和 split 方法。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h2 id="前言">前言</h2>
+<p> 正则这种东西是一个让我头疼的东西，真是书到用时方恨少，平常写的不多。但是真的到用的时候真的能大大提高生产力。</p>
+<blockquote>
+<p>以解析 Url 参数为例: <a href="https://wangcch.cc?key1=demo1&amp;key2=demo2">https://wangcch.cc?key1=demo1&amp;key2=demo2</a>
+目标解析为<!-- raw HTML omitted -->{key1: &ldquo;demo1&rdquo;, key2: &ldquo;demo2&rdquo;}<!-- raw HTML omitted --></p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<ol>
+<li>提取键值对</li>
+<li>分离键值</li>
+</ol>
+<h3 id="-提取键值"> 提取键值</h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&#34;https://wangcch.cc?key1=demo1&amp;key2=demo2&#34;</span><span class="p">;</span>
+</code></pre></div><p> 首先在字符串中我们需要的的是<!-- raw HTML omitted -->key1=demo1&amp;key2=demo2<!-- raw HTML omitted -->， 当然我们可以先以<!-- raw HTML omitted -->?<!-- raw HTML omitted -->分割字符串，再匹配<!-- raw HTML omitted -->[string]=[string]<!-- raw HTML omitted -->这种类型。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">url</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;?&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+<span class="c1">// key1=demo1&amp;key2=demo2
+</span></code></pre></div><p>匹配<!-- raw HTML omitted -->[string]=[string]<!-- raw HTML omitted -->时，<!-- raw HTML omitted -->&amp;<!-- raw HTML omitted -->可以分离减值对。当然如果区分<!-- raw HTML omitted -->&amp;<!-- raw HTML omitted -->，不如  也将<!-- raw HTML omitted -->?<!-- raw HTML omitted -->带上。 识别<!-- raw HTML omitted -->?/&amp;<!-- raw HTML omitted -->为键值对开头。</p>
+<p> 思路： <!-- raw HTML omitted -->[&amp;|?][string]=[string]<!-- raw HTML omitted -->
+</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[\&amp;|\?]\w+\=\w+/g</span><span class="p">);</span>
+<span class="c1">// [&#34;?key1=demo1&#34;, &#34;&amp;key2=demo2&#34;]
+</span><span class="c1"></span>
+<span class="cm">/**
+</span><span class="cm"> * \w    匹配一个单字字符（字母、数字或者下划线
+</span><span class="cm"> * \w+   匹配多个 \w，类似 \w{1,}
+</span><span class="cm"> * g     全局搜索
+</span><span class="cm"> */</span>
+</code></pre></div><p>去除键值对前的<!-- raw HTML omitted -->?<!-- raw HTML omitted -->|<!-- raw HTML omitted -->&amp;<!-- raw HTML omitted -->:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[\&amp;|\?]\w+\=\w+/g</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^[\&amp;|\?]/g</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">));</span>
+<span class="c1">//  [&#34;key1=demo1&#34;, &#34;key2=demo2&#34;]
+</span><span class="c1"></span>
+<span class="cm">/**
+</span><span class="cm"> * ^     匹配输入的开始，输入字符串开始的位置。
+</span><span class="cm"> */</span>
+</code></pre></div><h3 id="-分离键值"> 分离键值</h3>
+<p>通过上述，已经提取了想要的键值数据： <!-- raw HTML omitted -->[&ldquo;key1=demo1&rdquo;, &ldquo;key2=demo2&rdquo;]<!-- raw HTML omitted -->。 接下来就是分离键值,目标：<!-- raw HTML omitted -->{key1: &ldquo;demo1&rdquo;, key2: &ldquo;demo2&rdquo;}<!-- raw HTML omitted -->。</p>
+<p><!-- raw HTML omitted -->=<!-- raw HTML omitted -->分割键值：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">url</span>
+  <span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[\&amp;|\?]\w+\=\w+/g</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^[\&amp;|\?]/g</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">).</span><span class="nx">splice</span><span class="p">(</span><span class="s2">&#34;=&#34;</span><span class="p">));</span>
+
+<span class="c1">// [[&#34;key1&#34;, &#34;demo1&#34;], [&#34;key2&#34;, &#34;demo2&#34;]] 二维数组
+</span></code></pre></div><p>格式化，返回键值对对象</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">url</span>
+  <span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[\&amp;|\?]\w+\=\w+/g</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^[\&amp;|\?]/g</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;=&#34;</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">arr</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span>
+
+<span class="c1">// obj: {key1: &#34;demo1&#34;, key2: &#34;demo2&#34;}
+</span></code></pre></div><h2 id="最后-">最后 </h2>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">parsingURL</span> <span class="o">=</span> <span class="nx">url</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nx">url</span>
+    <span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[\&amp;|\?]\w+\=\w+/g</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^[\&amp;|\?]/g</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;=&#34;</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">arr</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span>
+  <span class="k">return</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div><p>当然引 qs 库也许更快：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">parse</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;qs&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">parsingURL</span> <span class="o">=</span> <span class="nx">url</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;?&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="p">};</span>
+
+<span class="c1">// 面对复杂情况恐怕也好要好好写
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">parsingURL</span> <span class="o">=</span> <span class="nx">url</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">url</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;?&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="o">?</span> <span class="nx">parse</span><span class="p">(</span>
+        <span class="nx">url</span>
+          <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;?&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+          <span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\&amp;?\w+\=\w+/g</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="o">:</span> <span class="p">{};</span>
+<span class="p">};</span>
+</code></pre></div><blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">MDN:正则表达式</a></p>
+</blockquote>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/note/">note</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/regular/">regular</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

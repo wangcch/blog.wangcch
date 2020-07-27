@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" >
 <head>
-	<meta name="generator" content="Hugo 0.74.2" />
+	<meta name="generator" content="Hugo 0.74.3" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,12 +93,14 @@
 
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='/posts/centos-yum_install_nginx/'>CentOS yum install nginx</a></h2>
+        <h2><a href='/posts/vue_props/'>Vue Props</a></h2>
     </div>
     
     <div class="list">
         <div class="post_content markdown">
-            <p>CentOS 7 yum install -y nginx 安装Nginx源 rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm /etc/yum.repos.d/ -&gt; nginx.repo 安装Nginx yum install -y nginx # 输入命令 whereis nginx # 输出 nginx: /usr/sbin/nginx /usr/lib64/nginx /etc/nginx /usr/share/nginx # # /etc/nginx Nginx 配置路径 # 常用命令 # 启动 nginx # 测试配置 nginx -t # 重启 nginx -s reload # 关闭 nginx -s stop # 优雅关闭(不接受新的连接请求，等待......</p>
+            <p><blockquote>
+<p>Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。</p>
+</blockquote>......</p>
         </div>
     </div>
     
@@ -107,83 +109,11 @@
             <div class="info">
                 <span class="field">
                     <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2018.03.07</span>
+                    <span class="date">2018.05.20</span>
                 </span>
                 
                 <span class="field tags">
                     <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/centos/">CentOS</a>
-                    
-                    <a href="https://blog.wangcch.cc/tags/nginx/">Nginx</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/once_crawler_node/'>node 记一次爬虫</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>一直都知道“爬虫”这个名称，但真正手写没试过。主要还是本人懒，再说也没什么需求。但今天因为需要一个测试数据，对着网页badssl.com，手动敲json文件。真的很多，是在敲不下去，再怎么复制粘贴也受......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2018.03.01</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/node.js/">node.js</a>
-                    
-                    <a href="https://blog.wangcch.cc/tags/cheerio/">cheerio</a>
-                    
-                    <a href="https://blog.wangcch.cc/tags/fs/">fs</a>
-                    
-                    <a href="https://blog.wangcch.cc/tags/https/">https</a>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/posts/vue-cli_api_proxy/'>vue-cli API代理</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>使用proxyTable进行跨域API代理 // config/index.js module.exports = { dev: { proxyTable: { // 将所有以 /api 开头的请求通过 jsonplaceholder 代理 &#39;/api&#39;: { target: &#39;https://wangcch.cc&#39;, changeOrigin: true, pathRewrite: { &#39;^/api&#39;: &#39;&#39; } } } } } 调用 this.$http.get(&#39;/api/demo&#39;).then(function(res){ console.log(res.data); }) 依赖 npm install vue-resource......</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2018.02.26</span>
-                </span>
-                
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
                     
                     <a href="https://blog.wangcch.cc/tags/vue/">Vue</a>
                     
@@ -196,12 +126,12 @@
 
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='/posts/vs-code_command/'>添加VS Code命令行</a></h2>
+        <h2><a href='/posts/tmux_conf/'>Tmux 简单配置</a></h2>
     </div>
     
     <div class="list">
         <div class="post_content markdown">
-            <p>习惯用atom的都知道，可以在文件目录中启动atom，非常方便。使用vs却发现没有。网上搜索配置.bash_profile，然而我没有这个文件，手动添加后可以使用，但是终端重启后又回失效。 最后在官网找......</p>
+            <p>Tmux 终端分屏利器。运行多个终端会话，你还可以通过 Tmux 使终端会话运行于后台或是按需接入、断开会话。实用高效 为什么配置 受不了ctrl + b（这两个组合键每次按的时候都要停顿一下&hellip;），还有% &ldq......</p>
         </div>
     </div>
     
@@ -210,13 +140,15 @@
             <div class="info">
                 <span class="field">
                     <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2018.02.25</span>
+                    <span class="date">2018.04.26</span>
                 </span>
                 
                 <span class="field tags">
                     <i class="ri-stack-line"></i>
                     
-                    <a href="https://blog.wangcch.cc/tags/vs-code/">vs code</a>
+                    <a href="https://blog.wangcch.cc/tags/tmux/">tmux</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/vim/">vim</a>
                     
                 </span>
                 
@@ -227,12 +159,14 @@
 
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='/posts/vim_command/'>vim 基本命令，常用命令</a></h2>
+        <h2><a href='/posts/spa_history/'>HTML5 History模式配置 (Node.js)</a></h2>
     </div>
     
     <div class="list">
         <div class="post_content markdown">
-            <p>基础命令 vim #命令行中进入vim编辑器 Esc #退出i(插入模式)，取消操纵 :! command #暂时离开vi到指令模式下执行command命令，如：!ls 执行ls命令 :sh #进入shell命令行,执行完命令后ctrl+d退出重......</p>
+            <p><blockquote>
+<p>vue-router 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。</p>
+</blockquote>......</p>
         </div>
     </div>
     
@@ -241,13 +175,89 @@
             <div class="info">
                 <span class="field">
                     <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2018.02.12</span>
+                    <span class="date">2018.04.24</span>
                 </span>
                 
                 <span class="field tags">
                     <i class="ri-stack-line"></i>
                     
-                    <a href="https://blog.wangcch.cc/tags/vim/">vim</a>
+                    <a href="https://blog.wangcch.cc/tags/express/">express</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/node.js/">node.js</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/router/">router</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/nuxt_element-ui/'>Nuxt element-ui</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p><p>Nuxt 引入js插件 以element-ui 为例</p>......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.04.12</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/vue/">Vue</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/nuxt/">Nuxt</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/element/">element</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/posts/nginx&#43;node_server_simple_proxy_program/'>Nginx Node 服务器简单代理方案</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>简单使用Nginx反向代理Node服务 前言 一直处于todo状态的东西，但本人比较懒，一直没写，但却用了很久。应该是去年开始线上服务器从windows server转到CentOS。（windows ser......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.03.25</span>
+                </span>
+                
+                <span class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://blog.wangcch.cc/tags/nginx/">Nginx</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/node.js/">node.js</a>
+                    
+                    <a href="https://blog.wangcch.cc/tags/pm2/">pm2</a>
                     
                 </span>
                 

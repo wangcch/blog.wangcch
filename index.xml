@@ -6,10 +6,91 @@
     <description>Recent content on 那那那呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.wangcch.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>看看 JaveScript ES2019</title>
+      <link>https://blog.wangcch.cc/posts/new_es10/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/new_es10/</guid>
+      <description>&lt;p&gt;一起看看在 ES2019 中带来的新特性。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>require/exports | import/export</title>
+      <link>https://blog.wangcch.cc/posts/require_or_import/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/require_or_import/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;规范不同；&lt;/li&gt;
+&lt;li&gt;时代不同；&lt;/li&gt;
+&lt;li&gt;形式不同；
+&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>nvm 真香</title>
+      <link>https://blog.wangcch.cc/posts/use-nvm/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/use-nvm/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Node Version Manager&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>let反思--块作用域</title>
+      <link>https://blog.wangcch.cc/posts/let_var/</link>
+      <pubDate>Tue, 25 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/let_var/</guid>
+      <description>&lt;p&gt;由 let 块作用域，反思自己的无知&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>啃个正则骨头--Url解析</title>
+      <link>https://blog.wangcch.cc/posts/regular_url/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/regular_url/</guid>
+      <description>正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript 中，正则表达式也是对象。这些模式被用于 RegExp 的 exec 和 test 方法, 以及 String 的 match、replace、search 和 split 方法。 前言  正则这种东西是一个让我头疼的东西，</description>
+    </item>
+    
+    <item>
+      <title>React 组件数据prop与state</title>
+      <link>https://blog.wangcch.cc/posts/react_prop_state/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/react_prop_state/</guid>
+      <description>Raect组件的数据分为两种，prop和state。基础知识，但是作者写太好了，忍不住做个笔记。 接触过Vue的，应该对prop和state不陌生，父类通过prop向子类传递数据，state是Vu</description>
+    </item>
+    
+    <item>
+      <title>JS深浅拷贝</title>
+      <link>https://blog.wangcch.cc/posts/deep_and_shallow_copy/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/deep_and_shallow_copy/</guid>
+      <description>&lt;p&gt;一个老生常谈的问题，也是  挤压很久的文章。也是  我业务代码赋值传递过程进场遇到的问题。其实之前没有深浅拷贝的概念。只是是与空的对象/数组合并生成新的对象/数组，或者是正反序列化，避免指向原数组/对象。后来查看&lt;a href=&#34;https://yuchengkai.cn/docs/&#34;&gt;InterviewMap&lt;/a&gt; 才知道深浅拷贝概念。所以简单  记录保存一下吧&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>sessionStorage,localStorage与Cookie</title>
+      <link>https://blog.wangcch.cc/posts/web_storage/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/web_storage/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Web Storage API (sessionStorage,localStorage) 提供机制， 使浏览器能以一种比使用 Cookie 更直观的方式存储键/值对。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>Checkbox自定义menu button</title>

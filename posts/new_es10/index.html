@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="wangcch" />
+	
+	
+	
+	<title>看看 JaveScript ES2019 ｜ 那那那呀</title>
+	
+    
+    
+    <meta name="description" content="一起看看在 ES2019 中带来的新特性。
+" />
+    
+
+    
+    
+    <meta name="keywords" content="Dave, wangcch, blog, wangcch.cc, 那年载你的初夏, 那那那那那呀, 那那那呀" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blog.wangcch.cc/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blog.wangcch.cc/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://blog.wangcch.cc/">
+                    <span>那那那呀</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">一个小伙</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/wangcch" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/_wangcch" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/wangcch" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="https://blog.wangcch.cc/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/new_es10/'>看看 JaveScript ES2019</a></h2>
+                        <span class="date">2019.02.12</span>
+                    </div>
+                    <div class="post_content markdown"><p>一起看看在 ES2019 中带来的新特性。</p>
+<h2 id="new">New</h2>
+<ul>
+<li>Array.prototype.{flat,flatMap}</li>
+<li>Object.fromEntries</li>
+<li>String.prototype.{trimStart,trimEnd}</li>
+<li>Optional Catch Binding</li>
+<li>JSON ⊂ ECMAScript</li>
+<li>Well-formed JSON.stringify</li>
+<li>Function.prototype.toString</li>
+<li>Symbol.prototype.description</li>
+</ul>
+<h2 id="arrayprototypeflatflatmap">Array.prototype.{flat,flatMap}</h2>
+<h3 id="flat">flat()</h3>
+<p><!-- raw HTML omitted -->flat()<!-- raw HTML omitted -->方法会递归到指定深度将所有子数组连接，并返回一个新数组。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="nx">depth</span><span class="p">);</span>
+<span class="c1">// depth: 可选，指定嵌套数组中的结构深度，默认值为1。
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// demo
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">]];</span>
+<span class="nx">arr1</span><span class="p">.</span><span class="nx">flat</span><span class="p">();</span>
+<span class="c1">// [1, 2, 3]
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]];</span>
+<span class="nx">arr2</span><span class="p">.</span><span class="nx">flat</span><span class="p">();</span>
+<span class="c1">// [1, 2, 3, [4, 5]]
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]];</span>
+<span class="nx">arr3</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// [1, 2, 3, 4, 5]
+</span></code></pre></div><h3 id="flatmap">flatMap()</h3>
+<p><!-- raw HTML omitted -->flatMap()<!-- raw HTML omitted --> 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。等于 map + 深度值 1 的 flat。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// demo
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="nx">arr1</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="p">[</span><span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]);</span>
+<span class="c1">// [[2], [4], [6]]
+</span><span class="c1"></span>
+<span class="nx">arr1</span><span class="p">.</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="p">[</span><span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]);</span>
+<span class="c1">// [2, 4, 6]
+</span></code></pre></div><h2 id="objectfromentries">Object.fromEntries</h2>
+<p>方法 <!-- raw HTML omitted -->Object.fromEntries()<!-- raw HTML omitted --> 把键值对列表转换为一个对象。是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">Object.entries</a> 的反转。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// demo
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">([[</span><span class="s2">&#34;name&#34;</span><span class="p">,</span> <span class="s2">&#34;demo&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;age&#34;</span><span class="p">,</span> <span class="mi">18</span><span class="p">]]);</span>
+<span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// { name: &#34;demo&#34;, age: 42 }
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&#34;0&#34;</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;1&#34;</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">]];</span>
+<span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// { 0: &#34;a&#34;, 1: &#34;b&#34;}
+</span></code></pre></div><h2 id="stringprototypetrimstarttrimend">String.prototype.{trimStart,trimEnd}</h2>
+<p><!-- raw HTML omitted -->trimStart()<!-- raw HTML omitted --> 方法从字符串的开头删除空格。trimLeft()别名；
+<!-- raw HTML omitted -->trimRight()<!-- raw HTML omitted --> 方法从一个字符串的右端移除空白字符。trimRight()别名。
+不会直接修改原字符串本身。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// demo
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s2">&#34;   Hello world!   &#34;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+<span class="c1">// &#34;   Hello world!   &#34;;
+</span><span class="c1"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">.</span><span class="nx">trimStart</span><span class="p">());</span>
+<span class="c1">// &#34;Hello world!   &#34;;
+</span><span class="c1"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">.</span><span class="nx">trimEnd</span><span class="p">());</span>
+<span class="c1">// &#34;Hello world!&#34;;
+</span></code></pre></div><h2 id="optional-catch-binding">Optional Catch Binding</h2>
+<p><!-- raw HTML omitted -->try catch<!-- raw HTML omitted --> 异常捕获变成可选。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Before
+</span><span class="c1"></span><span class="k">try</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// After
+</span><span class="c1"></span><span class="k">try</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="json--ecmascript">JSON ⊂ ECMAScript</h2>
+<p>现在，字符串文字中允许使用行分隔符（U + 2028）和段落分隔符（U + 2029）符号。以前会导致 SyntaxError 异常。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;&#34;\u2028&#34;&#39;</span><span class="p">);</span>
+<span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;&#34;\u2029&#34;&#39;</span><span class="p">);</span>
+</code></pre></div><h2 id="well-formed-jsonstringify">Well-formed JSON.stringify</h2>
+<p>更加友好的 JSON.stringify，修复了一些超出范围的 unicode 展示。</p>
+<h2 id="functionprototypetostring">Function.prototype.toString</h2>
+<p><!-- raw HTML omitted -->.toString()<!-- raw HTML omitted -->现在返回源代码文本的精确切片，包括空格和注释。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="cm">/* a comment */</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="c1">// Previously:
+</span><span class="c1"></span><span class="nx">foo</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="c1">// &#39;function foo() {}&#39;
+</span><span class="c1">//             ^ no comment
+</span><span class="c1">//               ^ no space
+</span><span class="c1"></span>
+<span class="c1">// Now:
+</span><span class="c1"></span><span class="nx">foo</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="c1">// &#39;function /* comment */ foo () {}&#39;
+</span></code></pre></div><h2 id="symbolprototypedescription">Symbol.prototype.description</h2>
+<p><!-- raw HTML omitted -->description<!-- raw HTML omitted --> 是一个只读属性，它会返回 Symbol 对象的可选描述的字符串。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;desc&#34;</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// &#34;Symbol(desc)&#34;
+</span><span class="c1"></span><span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;desc&#34;</span><span class="p">).</span><span class="nx">description</span><span class="p">;</span> <span class="c1">// &#34;desc&#34;
+</span><span class="c1"></span><span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">).</span><span class="nx">description</span><span class="p">;</span> <span class="c1">// &#34;&#34;
+</span><span class="c1"></span><span class="nx">Symbol</span><span class="p">().</span><span class="nx">description</span><span class="p">;</span> <span class="c1">// undefined
+</span><span class="c1"></span>
+<span class="c1">// well-known symbols
+</span><span class="c1"></span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// &#34;Symbol(Symbol.iterator)&#34;
+</span><span class="c1"></span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">description</span><span class="p">;</span> <span class="c1">// &#34;Symbol.iterator&#34;
+</span><span class="c1"></span>
+<span class="c1">// global symbols
+</span><span class="c1"></span><span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// &#34;Symbol(foo)&#34;
+</span><span class="c1"></span><span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">).</span><span class="nx">description</span><span class="p">;</span> <span class="c1">// &#34;foo&#34;
+</span></code></pre></div><h2 id="more">More</h2>
+<p>tc39/proposals: <a href="https://github.com/tc39/proposals">https://github.com/tc39/proposals</a></p>
+<blockquote>
+<p>参考：
+<a href="https://medium.freecodecamp.org/whats-new-in-javascript-es2019-8af4390d8494">What’s new in JavaScript ES2019</a> &gt; <a href="https://nitayneeman.com/posts/a-taste-from-ecmascript-2019/">ECMAScript - A Taste from ES2019 (ES10)</a> &gt; <a href="https://developer.mozilla.org">MDN web docs</a></p>
+</blockquote></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/js/">js</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/es2019/">es2019</a>
+                                    
+                                    <a href="https://blog.wangcch.cc/tags/es10/">es10</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div id="disqus_thread"></div><br/>
+<script>
+  
+
+  
+
+  (function () {
+    
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://blog-natzanfkii.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://wangcch.cc">🙆‍♂️ @wangcch.</a>
+        <a href="http://www.gohugo.io/">by Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://blog.wangcch.cc/js/jquery-3.5.1.min.js"></script>
+<link href="https://blog.wangcch.cc/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blog.wangcch.cc/js/fancybox.min.js"></script>
+<script src="https://blog.wangcch.cc/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

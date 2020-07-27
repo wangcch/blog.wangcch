@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sessionStorage on 那那那呀</title>
+    <link>https://blog.wangcch.cc/tags/sessionstorage/</link>
+    <description>Recent content in sessionStorage on 那那那呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 07 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.wangcch.cc/tags/sessionstorage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sessionStorage,localStorage与Cookie</title>
+      <link>https://blog.wangcch.cc/posts/web_storage/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.wangcch.cc/posts/web_storage/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Web Storage API (sessionStorage,localStorage) 提供机制， 使浏览器能以一种比使用 Cookie 更直观的方式存储键/值对。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
